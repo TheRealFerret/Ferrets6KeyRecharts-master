@@ -17,6 +17,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.FlxCamera;
 
 class PauseSubState extends MusicBeatSubstate
 {
@@ -30,6 +31,7 @@ class PauseSubState extends MusicBeatSubstate
 	
 	var offsetChanged:Bool = false;
 
+	public static var levelInfo:FlxText;
 	public function new(x:Float, y:Float)
 	{
 		super();
@@ -52,7 +54,7 @@ class PauseSubState extends MusicBeatSubstate
 		bg.scrollFactor.set();
 		add(bg);
 
-		var levelInfo:FlxText = new FlxText(20, 15, 0, "", 32);
+		levelInfo = new FlxText(20, 15, 0, "", 32);
 		levelInfo.text += PlayState.SONG.song;
 		levelInfo.scrollFactor.set();
 		levelInfo.setFormat(Paths.font("vcr.ttf"), 32);

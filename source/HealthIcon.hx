@@ -16,7 +16,17 @@ class HealthIcon extends FlxSprite
 		super();
 		switch(char)
 		{
-		case 'sonic' | 'sonicfun' | 'sonicLordX' | 'sunky' | 'bf-SS' | 'TDoll':
+		case 'boo':
+			loadGraphic(Paths.image('icon-boo'), true, 150, 150);
+
+			antialiasing = false;
+			animation.add('boo', [0, 1], 0, false, isPlayer);	
+		case 'bf-loggochristmas':
+			loadGraphic(Paths.image('icon-bf-awesome'), true, 150, 150);
+
+			antialiasing = false;
+			animation.add('bf-loggochristmas', [0, 1], 0, false, isPlayer);	
+		case 'sonic' | 'sonicfun' | 'sonicLordX' | 'sunky' | 'bf-SS' | 'TDoll' | 'fleetway' | 'faker' | 'exe':
 			loadGraphic(Paths.image('iconGridExe'), true, 150, 150);
 
 			antialiasing = true;
@@ -26,6 +36,9 @@ class HealthIcon extends FlxSprite
 			animation.add('sunky', [30, 31], 0, false, isPlayer);
 			animation.add('bf-SS', [32], 0, false, isPlayer);
 			animation.add('TDoll', [33], 0, false, isPlayer);
+			animation.add('fleetway', [40, 41], 0, false, isPlayer);
+			animation.add('faker', [34, 35], 0, false, isPlayer);
+			animation.add('exe', [36, 37], 0, false, isPlayer);
 		case 'selever_angry':
 			loadGraphic(Paths.image('icon-Selever_Angry'), true, 150, 150);
 
@@ -163,6 +176,7 @@ class HealthIcon extends FlxSprite
 			animation.add('bf-gundeath', [0, 1], 0, false, isPlayer);
 			animation.add('bf-paldo', [0, 1], 0, false, isPlayer);
 			animation.add('bf-blue', [0, 1], 0, false, isPlayer);
+			animation.add('bf-super', [0, 1], 0, false, isPlayer);
 			animation.add('spooky', [2, 3], 0, false, isPlayer);
 			animation.add('pico', [4, 5], 0, false, isPlayer);
 			animation.add('mom', [6, 7], 0, false, isPlayer);
@@ -180,6 +194,7 @@ class HealthIcon extends FlxSprite
 			animation.add('gf-mii', [16], 0, false, isPlayer);
 			animation.add('gf-rocks', [16], 0, false, isPlayer);
 			animation.add('gf-troll', [16], 0, false, isPlayer);
+			animation.add('gf-exe', [16], 0, false, isPlayer);
 			animation.add('parents-christmas', [17, 18], 0, false, isPlayer);
 			animation.add('monster', [19, 20], 0, false, isPlayer);
 			animation.add('monster-christmas', [19, 20], 0, false, isPlayer);

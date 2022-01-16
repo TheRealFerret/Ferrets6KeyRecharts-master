@@ -3,9 +3,11 @@ Expurgation:extricky:1
 Foolhardy:zardyMyBeloved:1
 Sporting:mattangry:1
 Defeat:black:1
+Spookpostor:boo:1
 Parasite:agoti:1
 Opheebop:opheebop:1
 Hard 2 Break:cheekygun:1
+Bad Eggroll:cheeky-Scared:1
 Cornucopia:cheeky-Scared:1
 Bad Omen:omen:1
 Attack:selever_angry:1
@@ -15,6 +17,9 @@ Endless:sonicfun:1
 Cycles:sonicLordX:1
 Milk:sunky:1
 Sunshine:TDoll:1
+Faker:faker:1
+Black Sun:exe:1
+Chaos:fleetway:1
 Old Endless:oldsonicfun:1
 Execution:oldsonicLordX:1
 No Villains:sonic-tgt:1

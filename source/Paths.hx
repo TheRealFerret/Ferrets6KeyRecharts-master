@@ -134,4 +134,14 @@ class Paths
 	{
 		return FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/$key.txt', library));
 	}
+
+	inline static public function getUsersDesktop()
+		{
+			var envs = Sys.environment();
+			if (envs.exists('USERNAME')) {
+				var USERNAME = envs['USERNAME'];
+				return 'C:/Users/$USERNAME/Desktop'; 
+			}
+			else return null; 
+		}
 }

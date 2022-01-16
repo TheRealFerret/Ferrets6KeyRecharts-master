@@ -326,6 +326,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
 				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
 
+				animation.addByPrefix('dodge', "boyfriend dodge", 24, false);
+
 				animation.addByPrefix('scared', 'BF idle shaking', 24);
 
 				addOffset('idle', -5);
@@ -342,6 +344,7 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
+				addOffset('dodge');
 
 				playAnim('idle');
 
@@ -1640,6 +1643,211 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+			case 'bf-loggochristmas':
+				iconColor = 'FF2eb0ce';
+				tex = Paths.getSparrowAtlas('characters/bfLoggoChristmas');
+				frames = tex;
+
+				animation.addByPrefix('idle', 'IDLE', 24);
+				animation.addByPrefix('singUP', 'UP', 24);
+				animation.addByPrefix('singLEFT', 'LEFT', 24);
+				animation.addByPrefix('singRIGHT', 'RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'DOWN', 24);
+				animation.addByPrefix('singUPmiss', 'miUP', 24);
+				animation.addByPrefix('singLEFTmiss', 'miLEFT', 24);
+				animation.addByPrefix('singRIGHTmiss', 'miRIGHT', 24);
+				animation.addByPrefix('singDOWNmiss', 'miDOWN', 24);
+
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+				addOffset("singUPmiss");
+				addOffset("singRIGHTmiss");
+				addOffset("singLEFTmiss");
+				addOffset("singDOWNmiss");
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				setGraphicSize(Std.int(width * 3));
+				flipX = true;
+			
+			case 'boo':
+				iconColor = 'FF289056';
+				tex = Paths.getSparrowAtlas('characters/jollyFella');
+				frames = tex;
+				animation.addByPrefix('idle', 'IDLE', 24);
+				animation.addByPrefix('singUP', 'UP', 24);
+				animation.addByPrefix('singRIGHT', 'RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'DOWN', 24);
+				animation.addByPrefix('singLEFT', 'LEFT', 24);
+
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+
+				playAnim('idle');
+
+				antialiasing = false;
+				
+				setGraphicSize(Std.int(width * 3));
+			
+			case 'bf-super':
+				iconColor = 'FF31b0d1';
+				tex = Paths.getSparrowAtlas('characters/Super_BoyFriend_Assets');
+				frames = tex;
+
+				animation.addByPrefix('idle', 'BF Super idle dance instance 1', 24);
+				animation.addByPrefix('singUP', 'BF NOTE UP instance 1', 24);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT instance 1', 24);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT instance 1', 24);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN instance 1', 24);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS instance 1', 24);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS instance 1', 24);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS instance 1', 24);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS instance 1', 24);
+
+				addOffset('idle', 56, 11);
+				addOffset("singUP", 51, 40);
+				addOffset("singRIGHT", 13, 9);
+				addOffset("singLEFT", 64, 14);
+				addOffset("singDOWN", 60, -71);
+				addOffset("singUPmiss", 48, 36);
+				addOffset("singRIGHTmiss", 3, 11);
+				addOffset("singLEFTmiss", 55, 13);
+				addOffset("singDOWNmiss", 56, -72);
+
+				playAnim('idle');
+
+				flipX = true;
+			
+			case 'fleetway':
+				iconColor = 'FFffff00';
+				tex = Paths.getSparrowAtlas('characters/Fleetway_Super_Sonic');
+				frames = tex;
+				animation.addByPrefix('idle', 'Fleetway Idle', 24);
+				animation.addByPrefix('singUP', 'Fleetway Up', 24);
+				animation.addByPrefix('singRIGHT', 'Fleetway Right', 24);
+				animation.addByPrefix('singDOWN', 'Fleetway Down', 24);
+				animation.addByPrefix('singLEFT', 'Fleetway Left', 24);
+				animation.addByPrefix('fastanim', 'Fleetway HowFast', 24, false);
+
+				addOffset('idle', 0, 0);
+				addOffset("singUP", 0, 36);
+				addOffset("singRIGHT", -62, -64);
+				addOffset("singLEFT", 221, -129);
+				addOffset("singDOWN", 0, -168);
+				addOffset("fastanim", 0, 0);
+
+				updateHitbox();
+
+			case 'fleetway-extras':
+				tex = Paths.getSparrowAtlas('characters/fleetway1');
+				frames = tex;
+				animation.addByPrefix('a', 'Fleetway StepItUp', 24, false);
+				animation.addByPrefix('b', 'Fleetway Laugh', 24, false);
+				animation.addByPrefix('c', 'Fleetway Too Slow', 24, false);
+				animation.addByPrefix('d', 'Fleetway YoureFinished', 24, false);
+				animation.addByPrefix('e', 'Fleetway WHAT?!', 24, false);
+				animation.addByPrefix('f', 'Fleetway Grrr', 24, false);
+
+				addOffset('a', 0, 0);
+				addOffset("b", 0, 0);
+				addOffset("c", 0, 0);
+				addOffset("d", 0, 0);
+				addOffset("e", 0, 0);
+				addOffset("f", 0, 0);
+
+				updateHitbox();
+
+				playAnim('a', true);
+				playAnim('b', true);
+				playAnim('c', true);
+				playAnim('d', true);
+				playAnim('e', true);
+				playAnim('f', true);
+
+			case 'fleetway-extras2':
+				tex = Paths.getSparrowAtlas('characters/fleetway2');
+				frames = tex;
+				animation.addByPrefix('a', 'Fleetway Show You', 24, false);
+				animation.addByPrefix('b', 'Fleetway Scream', 24, false);
+				animation.addByPrefix('c', 'Fleetway Growl', 24, false);
+				animation.addByPrefix('d', 'Fleetway Shut Up', 24, false);
+				animation.addByPrefix('e', 'Fleetway Right Alt', 24, true);
+
+				addOffset('a', 0, 0);
+				addOffset("b", 0, 0);
+				addOffset("c", 0, 0);
+				addOffset("d", 0, 0);
+				addOffset("e", 0, 0);
+
+				updateHitbox();
+
+				playAnim('a', true);
+				playAnim('b', true);
+				playAnim('c', true);
+				playAnim('d', true);
+				playAnim('e', true);
+
+			case 'fleetway-extras3':
+				tex = Paths.getSparrowAtlas('characters/fleetway3');
+				frames = tex;
+				animation.addByPrefix('a', 'Fleetway Laser Blas', 24, false);
+
+				addOffset('a', 0, 0);
+
+				updateHitbox();
+
+				playAnim('a', true);
+			case 'faker':
+				iconColor = 'FF001366';
+				tex = Paths.getSparrowAtlas('characters/Faker_EXE_Assets');
+				frames = tex;
+				animation.addByPrefix('idle', 'FAKER IDLE instance 1', 24);
+				animation.addByPrefix('singUP', 'FAKER UP instance 1', 24);
+				animation.addByPrefix('singRIGHT', 'FAKER RIGHT instance 1', 24);
+				animation.addByPrefix('singDOWN', 'FAKER DOWN instance 1', 24);
+				animation.addByPrefix('singLEFT', 'FAKER LEFT instance 1', 24);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 67);
+				addOffset("singRIGHT", 24, 32);
+				addOffset("singLEFT", 177, 29);
+				addOffset("singDOWN", -50, -36);
+			case 'exe':
+				iconColor = 'FF0000d7';
+				tex = Paths.getSparrowAtlas('characters/Exe_Assets');
+				frames = tex;
+				animation.addByPrefix('idle', 'Exe Idle', 24);
+				animation.addByPrefix('singUP', 'Exe Up', 24);
+				animation.addByPrefix('singRIGHT', 'Exe Right', 24);
+				animation.addByPrefix('singDOWN', 'Exe Down', 24);
+				animation.addByPrefix('singLEFT', 'Exe left', 24);
+
+				addOffset('idle', 0, 248);
+				addOffset("singUP", 95, 290);
+				addOffset("singRIGHT", 31, 217);
+				addOffset("singLEFT", 236, 243);
+				addOffset("singDOWN", 185, 44);
+			case 'gf-exe':
+				// GIRLFRIEND CODE
+				tex = Paths.getSparrowAtlas('characters/exe_gf_assets');
+				frames = tex;
+				animation.addByIndices('sad', 'gf miss', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
+				animation.addByIndices('danceLeft', 'gf dance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'gf dance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+
+				addOffset('sad', -9, -20);
+				addOffset('danceLeft', 0, -9);
+				addOffset('danceRight', 0, -9);
+
+				playAnim('danceRight');
 		}
 
 		dance();
@@ -1715,7 +1923,7 @@ class Character extends FlxSprite
 		{
 			switch (curCharacter)
 			{
-				case 'gf'|'gf-christmas'|'gf-car'|'gf-pixel'|'gf-tied'|'gf-itsumi'|'gf-mii'|'gf-tea'|'gf-rocks'|'gf-troll':
+				case 'gf'|'gf-christmas'|'gf-car'|'gf-pixel'|'gf-tied'|'gf-itsumi'|'gf-mii'|'gf-tea'|'gf-rocks'|'gf-troll'|'gf-exe':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;
@@ -1733,6 +1941,9 @@ class Character extends FlxSprite
 						playAnim('danceRight');
 					else
 						playAnim('danceLeft');
+				
+				case 'fleetway-extras', 'fleetway-extras2', 'fleetway-extras3':
+
 				default:
 					playAnim('idle');
 			}
