@@ -25,6 +25,18 @@ class OptionsMenu extends MusicBeatState
 	var curSelected:Int = 0;
 
 	var options:Array<OptionCategory> = [
+		new OptionCategory("Diff Increasing Modifiers", [
+			new NoMissOption("Miss, and you die."),
+			new SickOnlyOption("Get anything other than a SICK, and you die."),
+			new HalvedHealthGain("The amount of health you gain is halved."),
+			new NoHealthGain("You won't gain health, you will only lose health."),
+			new EnemyDrain("The enemy will also gain health, but only until you are nearly dead."),
+			new HalvedMaxHealth("The amount of max health you have is halved."),
+		]),
+		new OptionCategory("Diff Decreasing Modifiers", [
+			new DoubleHealthGain("The amount of health you gain is doubled."),
+			new DoubleMaxHealth("The amount of max health you have is doubled."),
+		]),
 		new OptionCategory("bob", [
 			new ScaryBS("disable the eye thing"),
 			new ShakingScreen("disable the screen shaking"),

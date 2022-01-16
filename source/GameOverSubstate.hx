@@ -13,6 +13,7 @@ import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import flixel.addons.transition.FlxTransitionableState;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
@@ -37,6 +38,8 @@ class GameOverSubstate extends MusicBeatSubstate
 	var inSecret:Bool = false;
 
 	var stageSuffix:String = "";
+
+	public static var crashdeath:Bool = false;
 
 	public function new(x:Float, y:Float)
 	{
@@ -65,15 +68,14 @@ class GameOverSubstate extends MusicBeatSubstate
 		}
 		switch (PlayState.SONG.player2)
 		{
+			case 'bigmonika':
+				stageSuffix = '';
+				daBf = 'bigmonika-dead';
 			case 'tricky' | 'extricky':
-			{
 				stageSuffix = '-clown';
 				daBf = 'bf-signDeath';
-			}
 			case 'cheekygun':
-			{
 				daBf = 'bf-gundeath';
-			}
 			case 'black':
 			{
 				if(FlxG.random.bool(5))	
@@ -87,10 +89,8 @@ class GameOverSubstate extends MusicBeatSubstate
 					daBf = 'bf-defeat-death';
 			}
 			case 'hellbob':
-				{
-					stageSuffix = '-HELLBOB';
-					daBf = 'bf-spiked';
-				}
+				stageSuffix = '-HELLBOB';
+				daBf = 'bf-spiked';
 		}
 		super();
 
@@ -207,21 +207,6 @@ class GameOverSubstate extends MusicBeatSubstate
 			bfdeathshit.animation.play('firstdeath');
 			add(bfdeathshit);
 		}
-		else if (PlayState.SONG.song.toLowerCase() == 'black sun')
-			{
-				bf.alpha = 0;
-				bfdeathshit.frames = Paths.getSparrowAtlas('exedeath');
-				bfdeathshit.setGraphicSize(Std.int(bfdeathshit.width * 1.9));
-				bfdeathshit.setPosition(-673, -378);
-				bfdeathshit.animation.addByPrefix('die', 'DieLmao', 24, false);
-				bfdeathshit.cameras = [coolcamera];
-				bfdeathshit.screenCenter();
-				bfdeathshit.animation.play('die');
-				bfdeathshit.animation.paused = true;
-				bfdeathshit.animation.curAnim.curFrame = 0;
-				bfdeathshit.antialiasing = true;
-				add(bfdeathshit);
-			}	
 
 		if (PlayState.SONG.song.toLowerCase() == 'endless')
 			{
@@ -239,7 +224,6 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'black sun':
 
 			case 'chaos':
 				bfdeathshit.animation.play('bru');
@@ -247,6 +231,13 @@ class GameOverSubstate extends MusicBeatSubstate
 			default:
 			FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
 		}
+		if (!crashdeath)
+			{
+				if (PlayState.SONG.player2 == 'bigmonika')
+					FlxG.sound.play(Paths.sound('fnf_loss_sfx-bigmonika'));
+				else
+					FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
+			}
 		Conductor.changeBPM(100);
 
 		// FlxG.camera.followLerp = 1;
@@ -254,7 +245,13 @@ class GameOverSubstate extends MusicBeatSubstate
 		FlxG.camera.scroll.set();
 		FlxG.camera.target = null;
 
-		bf.playAnim('firstDeath');
+		if (!crashdeath)
+			bf.playAnim('firstDeath');
+		else
+		{
+			FlxG.sound.play(Paths.sound('JarringMonikaSound'));
+			bf.playAnim('crashDeath');
+		}
 	}
 	var startVibin:Bool = false;
 
@@ -341,29 +338,6 @@ class GameOverSubstate extends MusicBeatSubstate
 						Sys.exit(0);
 					});
 				});
-			case 'black sun':
-				FlxG.sound.play(Paths.sound('Exe_die'));
-				var statica:FlxSprite = new FlxSprite();
-				statica.frames = Paths.getSparrowAtlas('screenstatic', 'shared');
-				statica.animation.addByPrefix('fard', 'screenSTATIC', 24, true);
-				statica.alpha = 0;
-				statica.animation.play('fard');
-				statica.cameras = [coolcamera2];
-				add(statica);
-
-				remove(bluevg);
-				bluevg.loadGraphic(Paths.image('RedVG', 'shared'));
-				add(bluevg);
-				bfdeathshit.animation.play('die');
-				bfdeathshit.animation.paused = false;
-				FlxTween.tween(bluevg, {alpha: 1}, 0.5);
-				FlxTween.tween(statica, {alpha: 0.2}, 0.2);
-				coolcamera.shake(0.05, 1);
-
-				bfdeathshit.animation.finishCallback = function(amogus:String)
-				{
-					Sys.exit(0);
-				}
 		}
 	}
 	
@@ -371,7 +345,7 @@ class GameOverSubstate extends MusicBeatSubstate
 	{
 		super.update(elapsed);
 
-		if (controls.ACCEPT)
+		if (controls.ACCEPT && !crashdeath)
 		{
 			endBullshit();
 		}
@@ -381,7 +355,7 @@ class GameOverSubstate extends MusicBeatSubstate
 				LoadingState.loadAndSwitchState(new PlayState());
 			}
 
-		if (controls.BACK)
+		if (controls.BACK && !crashdeath)
 		{
 			FlxG.sound.music.stop();
 
@@ -392,17 +366,25 @@ class GameOverSubstate extends MusicBeatSubstate
 			PlayState.loadRep = false;
 		}
 
-		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)
+		if (bf.animation.curAnim.name == 'crashDeath' && bf.animation.finished)
+			{
+				new FlxTimer().start(.5, function(timer:FlxTimer)
+				{
+					CoolUtil.crash();
+				});
+			}
+
+		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12 && !crashdeath)
 		{
 			FlxG.camera.follow(camFollow, LOCKON, 0.01);
 		}
 
-		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
+		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished && !crashdeath)
 		{
 			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
 			switch (PlayState.SONG.song.toLowerCase())
 			{
-				case 'too slow' | 'endless' | 'old endless' | 'execution' | 'faker':
+				case 'too slow' | 'endless' | 'old endless' | 'execution':
 					FlxG.sound.playMusic(Paths.music('gameOver-Exe'));
 				case 'milk':
 					FlxTween.tween(bfdeathshit, {alpha: 1}, 1);
@@ -410,6 +392,8 @@ class GameOverSubstate extends MusicBeatSubstate
 					FlxG.sound.playMusic(Paths.music('Sunky_death'));
 				case 'sunshine':
 					FlxG.sound.playMusic(Paths.music('sunshinegameover'));
+				case 'too fest':
+					FlxG.sound.music.stop();
 				case 'cycles':
 					FlxG.sound.playMusic(Paths.music('gameOver-Exe'));
 					playVoiceLine(StringTools.replace(Paths.sound('XLines', 'shared'), '.ogg', ''), 5);
@@ -417,10 +401,8 @@ class GameOverSubstate extends MusicBeatSubstate
 					bfdeathshit.animation.play('h', true);
 					FlxG.sound.playMusic(Paths.music('chaosgameover'));
 					playVoiceLine(StringTools.replace(Paths.sound('FleetLines', 'shared'), '.ogg', ''), 11);
-				case 'black sun':
-					FlxG.sound.playMusic(Paths.music('Exe_death'));
 			}
-			if (holdup && (PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'black sun')){
+			if (holdup && (PlayState.SONG.song.toLowerCase() == 'endless')){
 				startCountdown();
 			}
 			startVibin = true;
@@ -472,19 +454,15 @@ class GameOverSubstate extends MusicBeatSubstate
 			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'execution')
 				sonicDEATH.playAnim('retry', true);
 			FlxG.sound.music.stop();
-			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'old endless' || PlayState.SONG.song.toLowerCase() == 'cycles' || PlayState.SONG.song.toLowerCase() == 'milk' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'chaos' || PlayState.SONG.song.toLowerCase() == 'faker')
+			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'old endless' || PlayState.SONG.song.toLowerCase() == 'cycles' || PlayState.SONG.song.toLowerCase() == 'milk' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'chaos' || PlayState.SONG.song.toLowerCase() == 'too fest')
 			{
 				FlxG.sound.playMusic(Paths.music('gameOverEnd-Exe'));
-			}
-			else if (PlayState.SONG.song.toLowerCase() == 'black sun')
-			{
-				FlxG.sound.play(Paths.sound('Exe_die'));
 			}
 			else
 			{
 				FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));
 			}
-			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'old endless' || PlayState.SONG.song.toLowerCase() == 'cycles' || PlayState.SONG.song.toLowerCase() == 'milk' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'chaos' || PlayState.SONG.song.toLowerCase() == 'faker')
+			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'old endless' || PlayState.SONG.song.toLowerCase() == 'cycles' || PlayState.SONG.song.toLowerCase() == 'milk' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'chaos' || PlayState.SONG.song.toLowerCase() == 'too fest')
 			{
 				new FlxTimer().start(0.1, function(tmr:FlxTimer)
 					{

@@ -72,6 +72,166 @@ class Option
 	public function right():Bool { return throw "stub!"; }
 }
 
+class NoMissOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.noMiss = !FlxG.save.data.noMiss;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "No Miss " + (!FlxG.save.data.noMiss ? "off" : "on");
+	}
+}
+
+class SickOnlyOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.sickOnly = !FlxG.save.data.sickOnly;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Sick Only " + (!FlxG.save.data.sickOnly ? "off" : "on");
+	}
+}
+
+class HalvedHealthGain extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.halvedHealthGain = !FlxG.save.data.halvedHealthGain;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Halved Health Gain " + (!FlxG.save.data.halvedHealthGain ? "off" : "on");
+	}
+}
+
+class NoHealthGain extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.noHealthGain = !FlxG.save.data.noHealthGain;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "No Health Gain " + (!FlxG.save.data.noHealthGain ? "off" : "on");
+	}
+}
+
+class EnemyDrain extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.enemyDrain = !FlxG.save.data.enemyDrain;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Enemy Drain " + (!FlxG.save.data.enemyDrain ? "off" : "on");
+	}
+}
+
+class HalvedMaxHealth extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.halvedMaxHealth = !FlxG.save.data.halvedMaxHealth;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Halved Max Health " + (!FlxG.save.data.halvedMaxHealth ? "off" : "on");
+	}
+}
+
+class DoubleMaxHealth extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.doubleMaxHealth = !FlxG.save.data.doubleMaxHealth;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Double Max Health " + (!FlxG.save.data.doubleMaxHealth ? "off" : "on");
+	}
+}
+
+class DoubleHealthGain extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.doubleHealthGain = !FlxG.save.data.doubleHealthGain;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Double Health Gain " + (!FlxG.save.data.doubleHealthGain ? "off" : "on");
+	}
+}
+
 class JumpscareOption extends Option
 {
 	public function new(desc:String)

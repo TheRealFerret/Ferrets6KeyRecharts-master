@@ -16,6 +16,33 @@ class HealthIcon extends FlxSprite
 		super();
 		switch(char)
 		{
+		case 'soldierai':
+			loadGraphic(Paths.image('iconGridtf2'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('soldierai', [52, 53], 0, false, isPlayer);
+		case 'hellron':
+			loadGraphic(Paths.image('iconGridinacoolway'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('hellron', [28, 29], 0, false, isPlayer);		
+		case 'bigmonika':
+			loadGraphic(Paths.image('icon-bigmonika'), true, 150, 150);
+	
+			antialiasing = true;
+			animation.add('bigmonika', [0, 1], 0, false, isPlayer);	
+		case '3d-bf' | 'og-dave' | 'og-dave-angey' | 'garrett' | 'hall-monitor' | 'diamond-man' | 'playrobot' | 'playrobot-crazy':
+			loadGraphic(Paths.image('GAiconGrid'), true, 150, 150);
+
+			antialiasing = false;
+			animation.add('3d-bf', [34, 35], 0, false, isPlayer);
+			animation.add('og-dave', [14, 15], 0, false, isPlayer);	
+			animation.add('og-dave-angey', [14, 15], 0, false, isPlayer);	
+			animation.add('garrett', [20, 21], 0, false, isPlayer);	
+			animation.add('hall-monitor', [42, 43], 0, false, isPlayer);
+			animation.add('diamond-man', [40, 41], 0, false, isPlayer);
+			animation.add('playrobot', [38, 39], 0, false, isPlayer);
+			animation.add('playrobot-crazy', [38, 39], 0, false, isPlayer);
 		case 'boo':
 			loadGraphic(Paths.image('icon-boo'), true, 150, 150);
 
@@ -26,7 +53,7 @@ class HealthIcon extends FlxSprite
 
 			antialiasing = false;
 			animation.add('bf-loggochristmas', [0, 1], 0, false, isPlayer);	
-		case 'sonic' | 'sonicfun' | 'sonicLordX' | 'sunky' | 'bf-SS' | 'TDoll' | 'fleetway' | 'faker' | 'exe':
+		case 'sonic' | 'sonicfun' | 'sonicLordX' | 'sunky' | 'bf-SS' | 'TDoll' | 'fleetway' | 'sanic':
 			loadGraphic(Paths.image('iconGridExe'), true, 150, 150);
 
 			antialiasing = true;
@@ -37,8 +64,7 @@ class HealthIcon extends FlxSprite
 			animation.add('bf-SS', [32], 0, false, isPlayer);
 			animation.add('TDoll', [33], 0, false, isPlayer);
 			animation.add('fleetway', [40, 41], 0, false, isPlayer);
-			animation.add('faker', [34, 35], 0, false, isPlayer);
-			animation.add('exe', [36, 37], 0, false, isPlayer);
+			animation.add('sanic', [38, 39], 0, false, isPlayer);
 		case 'selever_angry':
 			loadGraphic(Paths.image('icon-Selever_Angry'), true, 150, 150);
 
@@ -177,6 +203,7 @@ class HealthIcon extends FlxSprite
 			animation.add('bf-paldo', [0, 1], 0, false, isPlayer);
 			animation.add('bf-blue', [0, 1], 0, false, isPlayer);
 			animation.add('bf-super', [0, 1], 0, false, isPlayer);
+			animation.add('bf-tf2', [0, 1], 0, false, isPlayer);
 			animation.add('spooky', [2, 3], 0, false, isPlayer);
 			animation.add('pico', [4, 5], 0, false, isPlayer);
 			animation.add('mom', [6, 7], 0, false, isPlayer);
@@ -194,7 +221,7 @@ class HealthIcon extends FlxSprite
 			animation.add('gf-mii', [16], 0, false, isPlayer);
 			animation.add('gf-rocks', [16], 0, false, isPlayer);
 			animation.add('gf-troll', [16], 0, false, isPlayer);
-			animation.add('gf-exe', [16], 0, false, isPlayer);
+			animation.add('gf-tf2', [16], 0, false, isPlayer);
 			animation.add('parents-christmas', [17, 18], 0, false, isPlayer);
 			animation.add('monster', [19, 20], 0, false, isPlayer);
 			animation.add('monster-christmas', [19, 20], 0, false, isPlayer);

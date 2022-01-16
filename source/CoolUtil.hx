@@ -1,6 +1,10 @@
 package;
 
+import flixel.FlxG;
+import openfl.display.BitmapData;
 import lime.utils.Assets;
+import flixel.graphics.FlxGraphic;
+import flixel.addons.transition.FlxTransitionableState;
 
 using StringTools;
 
@@ -46,4 +50,15 @@ class CoolUtil
 		}
 		return dumbArray;
 	}
+
+	public static function crash()
+		{
+			#if FEATURE_FILESYSTEM
+			Sys.exit(0);
+			#else
+			FlxTransitionableState.skipNextTransOut = true;
+			FlxTransitionableState.skipNextTransIn = true;
+			FlxG.switchState(new CrashState());
+			#end
+		}
 }

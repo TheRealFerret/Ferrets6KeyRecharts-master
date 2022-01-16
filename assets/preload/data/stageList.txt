@@ -36,5 +36,8 @@ TDStage
 stageSpook
 meat
 chamber
-FAKERSTAGE
-EXEStage
+algebra
+clubroomevil
+sanicStage
+ronhell
+honor

@@ -44,7 +44,7 @@ class OutdatedSubState extends MusicBeatState
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
 			"Hey! Thanks for playing! \nPlease read this if you haven't seen it yet."
-			+ "\n\nThanks for playing this mod. \nTake note that while I've made most of these recharts, \nAbyss made the recharts for Milk and Run. \nThanks Abyss!"
+			+ "\n\nThanks for playing this mod. \nTake note that while I've made most of these recharts, \nAbyss made the recharts for Milk, Run, Too Fest, and Alegbra. \nThanks Abyss!"
 			+ "\n\nThere is a Discord server for this mod. \nIf you want to join, press ESCAPE/BACKSPACE or press on the Discord option in the main menu."
 			+ "\n\nDO NOT TURN ON THESE SETTINGS: \nPreload Characters \nOptimizion"
 			+ "\n\nThis mod's version is currently 1.1.0"

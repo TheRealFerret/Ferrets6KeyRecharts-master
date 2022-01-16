@@ -32,6 +32,7 @@ class Note extends FlxSprite
 	public var noteType:Int = 0;
 	public var sustainLength:Float = 0;
 	public var isSustainNote:Bool = false;
+	public var LocalScrollSpeed:Float = 1;
 
 	public var burning:Bool = false; //fire
 	public var death:Bool = false;    //halo/death
@@ -42,6 +43,8 @@ class Note extends FlxSprite
 	public var glitch:Bool = false; //glitch
 	public var exe:Bool = false; //exe static
 	public var bsod:Bool = false; //bsod
+	public var markov:Bool = false; //markov
+	public var katana:Bool = false; //katana
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -169,6 +172,8 @@ class Note extends FlxSprite
 		glitch = noteType == 7;
 		exe = noteType == 8;
 		bsod = noteType == 9;
+		markov = noteType == 10;
+		katana = noteType == 11;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -293,7 +298,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (burning || death || warning || angel || bob || glitch || exe || bsod)
+				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana)
 					{
 						switch(noteType)
 						{
@@ -346,7 +351,7 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'holdend', 'glitch hold end'); // Tails
 									}
 							case 8:
-								frames = Paths.getSparrowAtlas('staticNotes');
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/staticNotes');
 								for (i in 0...11)
 									{
 										animation.addByPrefix(noteColors[i] + 'Scroll', 'static ' + noteColors[i] + '0'); // Normal notes
@@ -354,13 +359,29 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'holdend', 'static hold end'); // Tails
 									}	
 							case 9:
-								frames = Paths.getSparrowAtlas('noteassets/BSOD_NOTES_ASSETS');
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/BSOD_NOTES_ASSETS');
 								for (i in 0...11)
 									{
 										animation.addByPrefix(noteColors[i] + 'Scroll', 'bsod ' + noteColors[i] + '0'); // Normal notes
 										animation.addByPrefix(noteColors[i] + 'hold', 'bsod hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', 'bsod hold end'); // Tails
-									}			
+									}
+							case 10:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/dokiNOTE_assets');
+								for (i in 0...11)
+									{
+										animation.addByPrefix(noteColors[i] + 'Scroll', 'markov ' + noteColors[i] + '0'); // Normal notes
+										animation.addByPrefix(noteColors[i] + 'hold', 'markov hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', 'markov hold end'); // Tails
+									}	
+							case 11:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_conch');
+								for (i in 0...11)
+									{
+										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
+										animation.addByPrefix(noteColors[i] + 'hold', 'katana hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', 'katana hold end'); // Tails
+									}				
 						}
 					}
 				setGraphicSize(Std.int(width * noteScale));
@@ -374,7 +395,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (burning || death || warning || angel || bob || glitch || exe || bsod)
+				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana)
 					{
 						switch(noteType)
 						{
@@ -427,7 +448,7 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'holdend', 'glitch hold end'); // Tails
 									}
 							case 8:
-								frames = Paths.getSparrowAtlas('staticNotes');
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/staticNotes');
 								for (i in 0...11)
 									{
 										animation.addByPrefix(noteColors[i] + 'Scroll', 'static ' + noteColors[i] + '0'); // Normal notes
@@ -435,13 +456,29 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'holdend', 'static hold end'); // Tails
 									}	
 							case 9:
-								frames = Paths.getSparrowAtlas('noteassets/BSOD_NOTES_ASSETS');
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/BSOD_NOTES_ASSETS');
 								for (i in 0...11)
 									{
 										animation.addByPrefix(noteColors[i] + 'Scroll', 'bsod ' + noteColors[i] + '0'); // Normal notes
 										animation.addByPrefix(noteColors[i] + 'hold', 'bsod hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', 'bsod hold end'); // Tails
-									}					
+									}	
+							case 10:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/dokiNOTE_assets');
+								for (i in 0...11)
+									{
+										animation.addByPrefix(noteColors[i] + 'Scroll', 'markov ' + noteColors[i] + '0'); // Normal notes
+										animation.addByPrefix(noteColors[i] + 'hold', 'markov hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', 'markov hold end'); // Tails
+									}		
+							case 11:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_conch');
+								for (i in 0...11)
+									{
+										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
+										animation.addByPrefix(noteColors[i] + 'hold', 'katana hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', 'katana hold end'); // Tails
+									}			
 						}
 					}
 				setGraphicSize(Std.int(width * noteScale));
@@ -645,7 +682,7 @@ class Note extends FlxSprite
 					else
 						canBeHit = false;
 				}
-				else if (burning || death)
+				else if (burning || death || bsod || markov)
 				{
 					if (strumTime - Conductor.songPosition <= (100 * Conductor.timeScale)
 						&& strumTime - Conductor.songPosition >= (-50 * Conductor.timeScale))

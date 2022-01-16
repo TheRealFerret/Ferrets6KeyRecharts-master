@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dokiNOTE_assets.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="markov blue hold end0000" x="1310" y="254" width="51" height="64"/>
+	<SubTexture name="markov blue hold piece0000" x="1371" y="254" width="51" height="44"/>
+	<SubTexture name="markov blue0000" x="1432" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0001" x="1432" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0002" x="1432" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0003" x="1432" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0004" x="1432" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0005" x="1432" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0006" x="1432" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0007" x="1432" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0008" x="1615" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0009" x="1798" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0010" x="1798" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0011" x="1798" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0012" x="1798" y="254" width="173" height="154"/>
+	<SubTexture name="markov blue0013" x="10" y="494" width="173" height="154"/>
+	<SubTexture name="markov blue0014" x="193" y="494" width="173" height="154"/>
+	<SubTexture name="markov blue0015" x="376" y="494" width="173" height="154"/>
+	<SubTexture name="markov blue0016" x="376" y="494" width="173" height="154"/>
+	<SubTexture name="markov blue0017" x="376" y="494" width="173" height="154"/>
+	<SubTexture name="markov blue0018" x="376" y="494" width="173" height="154"/>
+	<SubTexture name="markov blue0019" x="559" y="494" width="173" height="154"/>
+	<SubTexture name="markov green hold end0000" x="742" y="494" width="51" height="65"/>
+	<SubTexture name="markov green hold piece0000" x="803" y="494" width="51" height="44"/>
+	<SubTexture name="markov green0000" x="864" y="494" width="173" height="156"/>
+	<SubTexture name="markov green0001" x="864" y="494" width="173" height="156"/>
+	<SubTexture name="markov green0002" x="864" y="494" width="173" height="156"/>
+	<SubTexture name="markov green0003" x="864" y="494" width="173" height="156"/>
+	<SubTexture name="markov green0004" x="864" y="494" width="173" height="156"/>
+	<SubTexture name="markov green0005" x="864" y="494" width="173" height="156"/>
+	<SubTexture name="markov green0006" x="864" y="494" width="173" height="156"/>
+	<SubTexture name="markov green0007" x="864" y="494" width="173" height="156"/>
+	<SubTexture name="markov green0008" x="1047" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0009" x="1230" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0010" x="1230" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0011" x="1230" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0012" x="1230" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0013" x="1413" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0014" x="1596" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0015" x="1779" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0016" x="1779" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0017" x="1779" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0018" x="1779" y="494" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov green0019" x="10" y="660" width="173" height="154" frameX="0" frameY="-2" frameWidth="173" frameHeight="156"/>
+	<SubTexture name="markov purple end hold0000" x="193" y="660" width="51" height="64"/>
+	<SubTexture name="markov purple hold piece0000" x="254" y="660" width="51" height="44"/>
+	<SubTexture name="markov purple0000" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0001" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0002" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0003" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0004" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0005" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0006" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0007" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0008" x="498" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0009" x="681" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0010" x="681" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0011" x="681" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0012" x="681" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0013" x="864" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0014" x="1047" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0015" x="1230" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0016" x="1230" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0017" x="1230" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0018" x="1230" y="660" width="173" height="158"/>
+	<SubTexture name="markov purple0019" x="1413" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow end hold0000" x="193" y="660" width="51" height="64"/>
+	<SubTexture name="markov yellow hold piece0000" x="254" y="660" width="51" height="44"/>
+	<SubTexture name="markov yellow0000" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0001" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0002" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0003" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0004" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0005" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0006" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0007" x="315" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0008" x="498" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0009" x="681" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0010" x="681" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0011" x="681" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0012" x="681" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0013" x="864" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0014" x="1047" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0015" x="1230" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0016" x="1230" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0017" x="1230" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0018" x="1230" y="660" width="173" height="158"/>
+	<SubTexture name="markov yellow0019" x="1413" y="660" width="173" height="158"/>
+	<SubTexture name="markov red hold end0000" x="193" y="660" width="51" height="64"/>
+	<SubTexture name="markov red hold piece0000" x="1596" y="660" width="51" height="45"/>
+	<SubTexture name="markov red0000" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0001" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0002" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0003" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0004" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0005" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0006" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0007" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0008" x="1840" y="660" width="173" height="157"/>
+	<SubTexture name="markov red0009" x="10" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0010" x="10" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0011" x="10" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0012" x="10" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0013" x="193" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0014" x="376" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0015" x="559" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0016" x="559" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0017" x="559" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0018" x="559" y="828" width="173" height="157"/>
+	<SubTexture name="markov red0019" x="742" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark hold end0000" x="193" y="660" width="51" height="64"/>
+	<SubTexture name="markov dark hold piece0000" x="1596" y="660" width="51" height="45"/>
+	<SubTexture name="markov dark0000" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0001" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0002" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0003" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0004" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0005" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0006" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0007" x="1657" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0008" x="1840" y="660" width="173" height="157"/>
+	<SubTexture name="markov dark0009" x="10" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0010" x="10" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0011" x="10" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0012" x="10" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0013" x="193" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0014" x="376" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0015" x="559" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0016" x="559" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0017" x="559" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0018" x="559" y="828" width="173" height="157"/>
+	<SubTexture name="markov dark0019" x="742" y="828" width="173" height="157"/>
+</TextureAtlas>

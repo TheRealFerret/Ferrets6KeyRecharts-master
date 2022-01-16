@@ -500,8 +500,10 @@ class ChartingState extends MusicBeatState
 	var stepperGlitchNote:FlxUINumericStepper;
 	var stepperExeNote:FlxUINumericStepper;
 	var stepperBsodNote:FlxUINumericStepper;
+	var stepperMarkovNote:FlxUINumericStepper;
+	var stepperKatanaNote:FlxUINumericStepper;
 
-	var noteTypes:Array<String> = ['Normal', 'Fire', 'Death', 'Warning', 'Angel', 'Alt Anim', 'Bob', 'Glitch', 'Exe', 'Bsod'];
+	var noteTypes:Array<String> = ['Normal', 'Fire', 'Death', 'Warning', 'Angel', 'Alt Anim', 'Bob', 'Glitch', 'Exe', 'Bsod', 'Markov', 'Katana'];
 	var typeChangeLabel:FlxText;
 
 	function addNoteUI():Void
