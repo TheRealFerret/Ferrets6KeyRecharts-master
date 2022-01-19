@@ -1,5 +1,6 @@
 package;
 
+import GameJolt;
 import GameJolt.GameJoltAPI;
 import openfl.ui.KeyLocation;
 import openfl.events.Event;
@@ -5539,10 +5540,16 @@ class PlayState extends MusicBeatState
 			#end
 			if (SONG.song.toLowerCase() == 'run' || SONG.song.toLowerCase() == 'bloodshed')
 			{
+				#if debug
+				FlxG.switchState(new ChartingState());
+				#end
 				FlxG.switchState(new CantRunState());
 			}
 			else if (SONG.song.toLowerCase() == 'onslaught')
 			{
+				#if debug
+				FlxG.switchState(new ChartingState());
+				#end
 				FlxG.switchState(new FunState());
 			}
 			else
@@ -7113,120 +7120,6 @@ class PlayState extends MusicBeatState
 				trace('WENT BACK TO FREEPLAY??');
 
 				paused = true;
-
-				// gamejolt trophies
-				if (SONG.song.toLowerCase() == 'defeat' && !FlxG.save.data.defeatbeaten && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.defeatbeaten = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155519);
-						#end
-					}			
-				if (SONG.song.toLowerCase() == 'run' && !FlxG.save.data.runbeaten && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.runbeaten = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155497);
-						#end
-					}			
-				if (SONG.song.toLowerCase() == 'bloodshed' && !FlxG.save.data.bloodshedfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'bloodshed' && !FlxG.save.data.bloodshedfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.bloodshedfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155500);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'sporting' && !FlxG.save.data.sportingfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'sporting' && !FlxG.save.data.sportingfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.sportingfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155541);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'expurgation' && !FlxG.save.data.expurgationfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'expurgation' && !FlxG.save.data.expurgationfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.expurgationfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155540);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'bad eggroll' && !FlxG.save.data.badeggrollfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'bad eggroll' && !FlxG.save.data.badeggrollfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.badeggrollfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155531);
-						#end
-					}		
-				if (SONG.song.toLowerCase() == 'cornucopia' && !FlxG.save.data.cornucopiafc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'cornucopia' && !FlxG.save.data.cornucopiafc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.cornucopiafc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155532);
-						#end
-					}	
-				if (SONG.song.toLowerCase() == 'attack' && !FlxG.save.data.attackfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'attack' && !FlxG.save.data.attackfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.attackfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155542);
-						#end
-					}	
-				if (SONG.song.toLowerCase() == 'epiphany' && !FlxG.save.data.epiphanyfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'epiphany' && !FlxG.save.data.epiphanyfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.epiphanyfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155533);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'no villains' && !FlxG.save.data.novilliansfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'no villains' && !FlxG.save.data.novilliansfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.novilliansfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155530);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'honorbound' && !FlxG.save.data.honorboundfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'honorbound' && !FlxG.save.data.honorboundfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.honorboundfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155534);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'alegbra' && !FlxG.save.data.alegbrafc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'alegbra' && !FlxG.save.data.alegbra && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.alegbrafc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155537);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'piracy' && !FlxG.save.data.piracyfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'piracy' && !FlxG.save.data.piracyfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.piracyfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155538);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'onslaught' && !FlxG.save.data.onslaughtfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'onslaught' && !FlxG.save.data.onslaughtfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.onslaughtfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155617);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'foolhardy' && !FlxG.save.data.foolhardyfc && FlxG.save.data.noMiss && !FlxG.save.data.botplay || SONG.song.toLowerCase() == 'foolhardy' && !FlxG.save.data.foolhardyfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.foolhardyfc = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155621);
-						#end
-					}
-				if (SONG.song.toLowerCase() == 'no villains' && !FlxG.save.data.novilliansdrain && FlxG.save.data.enemyDrain && !FlxG.save.data.botplay)
-					{
-						FlxG.save.data.novilliansdrain = true;
-						#if FEATURE_GAMEJOLT
-						GameJoltAPI.getTrophy(155622);
-						#end
-					}
 
 				FlxG.sound.music.stop();
 				vocals.stop();
@@ -8859,6 +8752,72 @@ class PlayState extends MusicBeatState
 		{
 			resyncVocals();
 		}
+
+		// gamejolt trophies
+		if (SONG.song.toLowerCase() == 'defeat' && !FlxG.save.data.botplay && curStep == 2009)
+			{
+				GameJoltAPI.getTrophy(155519);
+			}			
+		if (SONG.song.toLowerCase() == 'run' && !FlxG.save.data.botplay && curStep == 866)
+			{
+				GameJoltAPI.getTrophy(155497);
+			}			
+		if (SONG.song.toLowerCase() == 'bloodshed' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 1150 || SONG.song.toLowerCase() == 'bloodshed' && !FlxG.save.data.bloodshedfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 1150)
+			{
+				GameJoltAPI.getTrophy(155500);
+			}
+		if (SONG.song.toLowerCase() == 'sporting' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 3073 || SONG.song.toLowerCase() == 'sporting' && !FlxG.save.data.sportingfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 3073)
+			{
+				GameJoltAPI.getTrophy(155541);
+			}
+		if (SONG.song.toLowerCase() == 'expurgation' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 2960 || SONG.song.toLowerCase() == 'expurgation' && !FlxG.save.data.expurgationfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 2960)
+			{
+				GameJoltAPI.getTrophy(155540);
+			}
+		if (SONG.song.toLowerCase() == 'bad eggroll' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 2116 || SONG.song.toLowerCase() == 'bad eggroll' && !FlxG.save.data.badeggrollfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 2116)
+			{
+				GameJoltAPI.getTrophy(155531);
+			}		
+		if (SONG.song.toLowerCase() == 'cornucopia' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 2528 || SONG.song.toLowerCase() == 'cornucopia' && !FlxG.save.data.cornucopiafc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 2528)
+			{
+				GameJoltAPI.getTrophy(155532);
+			}	
+		if (SONG.song.toLowerCase() == 'attack' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 1383 || SONG.song.toLowerCase() == 'attack' && !FlxG.save.data.attackfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 1383)
+			{
+				GameJoltAPI.getTrophy(155542);
+			}	
+		if (SONG.song.toLowerCase() == 'epiphany' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 3336 || SONG.song.toLowerCase() == 'epiphany' && !FlxG.save.data.epiphanyfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 3336)
+			{
+				GameJoltAPI.getTrophy(155533);
+			}
+		if (SONG.song.toLowerCase() == 'no villains' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 2200 || SONG.song.toLowerCase() == 'no villains' && !FlxG.save.data.novilliansfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 2200)
+			{
+				GameJoltAPI.getTrophy(155530);
+			}
+		if (SONG.song.toLowerCase() == 'honorbound' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 1696 || SONG.song.toLowerCase() == 'honorbound' && !FlxG.save.data.honorboundfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 1696)
+			{
+				GameJoltAPI.getTrophy(155534);
+			}
+		if (SONG.song.toLowerCase() == 'alegbra' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 8747 || SONG.song.toLowerCase() == 'alegbra' && !FlxG.save.data.alegbra && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 8747)
+			{
+				GameJoltAPI.getTrophy(155537);
+			}
+		if (SONG.song.toLowerCase() == 'piracy' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 2376 || SONG.song.toLowerCase() == 'piracy' && !FlxG.save.data.piracyfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 2376)
+			{
+				GameJoltAPI.getTrophy(155538);
+			}
+		if (SONG.song.toLowerCase() == 'onslaught' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 1600 || SONG.song.toLowerCase() == 'onslaught' && !FlxG.save.data.onslaughtfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 1600)
+			{
+				GameJoltAPI.getTrophy(155617);
+			}
+		if (SONG.song.toLowerCase() == 'foolhardy' && FlxG.save.data.noMiss && !FlxG.save.data.botplay && curStep == 2992 || SONG.song.toLowerCase() == 'foolhardy' && !FlxG.save.data.foolhardyfc && FlxG.save.data.sickOnly && !FlxG.save.data.botplay && curStep == 2992)
+			{
+				GameJoltAPI.getTrophy(155621);
+			}
+		if (SONG.song.toLowerCase() == 'no villains' && FlxG.save.data.enemyDrain && !FlxG.save.data.botplay && curStep == 2200)
+			{
+				GameJoltAPI.getTrophy(155717);
+			}
 
 		if (curSong.toLowerCase() == 'honorbound')
 			{

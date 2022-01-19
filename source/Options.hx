@@ -1194,23 +1194,6 @@ class ResetSettings extends Option
 		FlxG.save.data.oldtimings = null;
 		FlxG.save.data.gracetmr = null;
 
-		FlxG.save.data.runbeaten = null;
-		FlxG.save.data.bloodshedfc = null;
-		FlxG.save.data.defeatbeaten = null;
-		FlxG.save.data.sportingfc = null;
-		FlxG.save.data.expurgationfc = null;
-		FlxG.save.data.badeggrollfc = null;
-		FlxG.save.data.cornucopiafc = null;
-		FlxG.save.data.attackfc = null;
-		FlxG.save.data.epiphanyfc = null;
-		FlxG.save.data.novilliansfc = null;
-		FlxG.save.data.honorboundfc = null;
-		FlxG.save.data.alegbrafc = null;
-		FlxG.save.data.piracyfc = null;
-		FlxG.save.data.onslaughtfc = null;
-		FlxG.save.data.foolhardyfc = null;
-		FlxG.save.data.novilliansdrain = null;
-
 		KadeEngineData.initSave();
 		confirm = false;
 		trace('All settings have been reset');

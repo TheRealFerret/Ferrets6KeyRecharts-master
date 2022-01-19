@@ -3,6 +3,7 @@ package;
 #if sys
 import smTools.SMFile;
 #end
+import GameJolt;
 import GameJolt.GameJoltAPI;
 import flixel.FlxG;
 import flixel.FlxSprite;
