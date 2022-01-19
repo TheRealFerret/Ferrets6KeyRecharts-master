@@ -30,4 +30,5 @@ Algebra:og-dave:1
 Illusion:neomonster:1
 Piracy:redbald:1
 Run:hellbob:1
+Onslaught:glitched-bob:1
 Bloodshed:hellron:1

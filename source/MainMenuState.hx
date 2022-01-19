@@ -1,5 +1,7 @@
 package;
 
+import GameJolt;
+import GameJolt.GameJoltAPI;
 import flixel.input.gamepad.FlxGamepad;
 import Controls.KeyboardScheme;
 import flixel.FlxG;
@@ -29,7 +31,7 @@ class MainMenuState extends MusicBeatState
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['freeplay', 'options', 'donate'];
+	var optionShit:Array<String> = ['freeplay', 'options', 'donate', 'story mode'];
 	#else
 	var optionShit:Array<String> = ['freeplay'];
 	#end
@@ -241,8 +243,7 @@ class MainMenuState extends MusicBeatState
 		switch (daChoice)
 		{
 			case 'story mode':
-				FlxG.switchState(new StoryMenuState());
-				trace("Story Menu Selected");
+				FlxG.switchState(new GameJoltLogin());
 			case 'freeplay':
 				FlxG.switchState(new FreeplayState());
 

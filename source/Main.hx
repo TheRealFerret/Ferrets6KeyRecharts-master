@@ -1,5 +1,6 @@
 package;
 
+import GameJolt;
 import openfl.display.BlendMode;
 import openfl.text.TextFormat;
 import openfl.display.Application;
@@ -23,6 +24,8 @@ class Main extends Sprite
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
 	public static var editor:Bool = false;
+
+	public static var gjToastManager:GJToastManager;
 
 	public static var watermarks = true; // Whether to put Kade Engine liteartly anywhere
 
@@ -64,6 +67,9 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
+		gjToastManager = new GJToastManager();
+		addChild(gjToastManager);
+
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 

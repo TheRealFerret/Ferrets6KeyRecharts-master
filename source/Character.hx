@@ -1472,20 +1472,20 @@ class Character extends FlxSprite
 				antialiasing = true;
 			case 'selever_angry':
 				// DAD ANIMATION LOADING CODE
-				iconColor = 'FF79143c';
+				iconColor = 'FF96234f';
 				tex = Paths.getSparrowAtlas('characters/Selever_Angry','shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Selever_Angry Idle', 6, false);
-				animation.addByPrefix('singUP', 'Selever_Angry Up', 9, false);
-				animation.addByPrefix('singRIGHT', 'Selever_Angry Right', 9, false);
-				animation.addByPrefix('singDOWN', 'Selever_Angry Down', 9, false);
-				animation.addByPrefix('singLEFT', 'Selever_Angry Left', 9, false);
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
 
-				addOffset('idle', 0, 0);
-				addOffset('singUP', 0, 0);
-				addOffset('singRIGHT', 0, 0);
-				addOffset('singLEFT', 0, 0);
-				addOffset('singDOWN', 0, 0);
+				addOffset('idle', -225, 138);
+				addOffset('singUP', -237, 181);
+				addOffset('singRIGHT', -270, 120);
+				addOffset('singLEFT', -183, 135);
+				addOffset('singDOWN', -206, 91);
 
 				playAnim('idle');
 				updateHitbox();
@@ -2166,6 +2166,18 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+			
+			case 'glitched-bob':
+				iconColor = 'FF000000';
+				tex = Paths.getSparrowAtlas('characters/ScaryBobAaaaah');
+				frames = tex;
+				animation.addByPrefix('idle', "idle???-", 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+	
+				addOffset('idle');
 		}
 
 		dance();

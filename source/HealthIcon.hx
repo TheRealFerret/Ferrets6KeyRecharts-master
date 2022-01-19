@@ -83,11 +83,12 @@ class HealthIcon extends FlxSprite
 
 			antialiasing = true;
 			animation.add('redbald', [32, 33], 0, false, isPlayer);
-		case 'hellbob':
+		case 'hellbob'|'glitched-bob':
 			loadGraphic(Paths.image('iconGridbob'), true, 150, 150);
 
 			antialiasing = true;
 			animation.add('hellbob', [28, 29], 0, false, isPlayer);
+			animation.add('glitched-bob', [34, 35], 0, false, isPlayer);
 		case 'bf-bob':
 			loadGraphic(Paths.image('iconGridCheeky3'), true, 150, 150);
 

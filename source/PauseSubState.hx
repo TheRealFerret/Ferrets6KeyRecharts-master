@@ -23,7 +23,7 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to Freeplay'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -158,7 +158,7 @@ class PauseSubState extends MusicBeatSubstate
 				{
 					grpMenuShit.clear();
 
-					menuItems = ['Restart Song', 'Exit to menu'];
+					menuItems = ['Restart Song', 'Exit to Freeplay'];
 
 					for (i in 0...menuItems.length)
 					{
@@ -183,7 +183,7 @@ class PauseSubState extends MusicBeatSubstate
 				{
 					grpMenuShit.clear();
 
-					menuItems = ['Restart Song', 'Exit to menu'];
+					menuItems = ['Restart Song', 'Exit to Freeplay'];
 
 					for (i in 0...menuItems.length)
 					{
@@ -217,7 +217,7 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.instance.removedVideo = true;
 					}
 					FlxG.resetState();
-				case "Exit to menu":
+				case "Exit to Freeplay":
 					if (PlayState.instance.useVideo)
 					{
 						GlobalVideo.get().stop();
@@ -241,7 +241,7 @@ class PauseSubState extends MusicBeatSubstate
 					if (FlxG.save.data.fpsCap > 290)
 						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
 					
-					FlxG.switchState(new MainMenuState());
+					FlxG.switchState(new FreeplayState());
 			}
 		}
 

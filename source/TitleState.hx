@@ -3,6 +3,7 @@ package;
 #if sys
 import smTools.SMFile;
 #end
+import GameJolt.GameJoltAPI;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -74,6 +75,9 @@ class TitleState extends MusicBeatState
 		 });
 		 
 		#end
+
+		GameJoltAPI.connect();
+		GameJoltAPI.authDaUser(FlxG.save.data.gjUser, FlxG.save.data.gjToken);
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 

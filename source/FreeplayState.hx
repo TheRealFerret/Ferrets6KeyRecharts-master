@@ -1,5 +1,8 @@
 package;
 
+#if FEATURE_GAMEJOLT
+import GameJolt.GameJoltAPI;
+#end
 import flixel.input.gamepad.FlxGamepad;
 import flash.text.TextField;
 import flixel.FlxG;
