@@ -16,6 +16,11 @@ class HealthIcon extends FlxSprite
 		super();
 		switch(char)
 		{
+		case 'herobrine':
+			loadGraphic(Paths.image('icon-herobrine'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('herobrine', [0, 1], 0, false, isPlayer);
 		case 'soldierai':
 			loadGraphic(Paths.image('iconGridtf2'), true, 150, 150);
 

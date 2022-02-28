@@ -82,17 +82,6 @@ class Caching extends MusicBeatState
 		FlxGraphic.defaultPersist = FlxG.save.data.cacheImages;
 
 		#if cpp
-		if (FlxG.save.data.cacheImages)
-		{
-			trace("caching images...");
-
-			for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images")))
-			{
-				if (!i.endsWith(".png"))
-					continue;
-				images.push(i);
-			}
-		}
 
 		trace("caching music...");
 

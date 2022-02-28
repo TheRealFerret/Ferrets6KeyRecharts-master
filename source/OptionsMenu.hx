@@ -43,7 +43,8 @@ class OptionsMenu extends MusicBeatState
 			new HappyVersion("happy :)")
 		]),
 		new OptionCategory("Sonic exe mod", [
-			new JumpscareOption("Toggle the usage of jumpscares (this lowers lag by alot)")
+			new JumpscareOption("Toggle the usage of jumpscares (this lowers lag by alot)"),
+			new Vfx("Enables special visual effects (turning it off helps with memory and preformace)")
 		]),
 		new OptionCategory("Engine Specfic", [
 			new OldTimingsOption("Change between KE 1.5.4 and KE 1.4.2 Hit timings"),
@@ -59,6 +60,7 @@ class OptionsMenu extends MusicBeatState
 			new SixKeyMenu(controls),
 			new NineKeyMenu(controls),
 			new DownscrollOption("Change the layout of the strumline."),
+			new MiddlescrollOption("Set the strumline to the middle of the screen."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
 			#if desktop
 			new FPSCapOption("Cap your FPS"),

@@ -252,6 +252,26 @@ class JumpscareOption extends Option
 	}
 }
 
+class Vfx extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.vfx = !FlxG.save.data.vfx;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Visual Effects " + (!FlxG.save.data.vfx ? "off" : "on");
+	}
+}
+
 class HappyVersion extends Option
 {
 	public function new(desc:String)
@@ -395,6 +415,27 @@ class DownscrollOption extends Option
 	private override function updateDisplay():String
 	{
 		return FlxG.save.data.downscroll ? "Downscroll" : "Upscroll";
+	}
+}
+
+class MiddlescrollOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.middlescroll = !FlxG.save.data.middlescroll;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return 'Middle Scroll ' + (!FlxG.save.data.middlescroll ? "off" : "on");
 	}
 }
 
@@ -1161,6 +1202,7 @@ class ResetSettings extends Option
 		FlxG.save.data.weekUnlocked = null;
 		FlxG.save.data.newInput = null;
 		FlxG.save.data.downscroll = null;
+		//FlxG.save.data.middlescroll = null;
 		FlxG.save.data.antialiasing = null;
 		FlxG.save.data.missSounds = null;
 		FlxG.save.data.dfjk = null;
