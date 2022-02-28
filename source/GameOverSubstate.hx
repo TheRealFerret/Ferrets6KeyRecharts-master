@@ -63,6 +63,13 @@ class GameOverSubstate extends MusicBeatSubstate
 				daBf = 'bf-bob';
 			case 'bf-paldo':
 				daBf = 'bf-paldo';
+			case 'bf-retro':
+				daBf = 'bf-retro';
+			case 'bf-tf2':
+				stageSuffix = '-tf2';
+				daBf = 'bf-tf2';
+			case 'bfbig':
+				daBf = 'bfbig';
 			default:
 				daBf = 'bf';
 		}

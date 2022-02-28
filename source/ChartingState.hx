@@ -456,7 +456,7 @@ class ChartingState extends MusicBeatState
 				var note = _song.notes[curSection].sectionNotes[i];
 
 				var half = keyAmmo[_song.mania];
-				note[1] = (note[1] + 8) % 16;
+				note[1] = (note[1] + 6) % 12;
 				_song.notes[curSection].sectionNotes[i] = note;
 				updateGrid();
 			}
@@ -502,8 +502,11 @@ class ChartingState extends MusicBeatState
 	var stepperBsodNote:FlxUINumericStepper;
 	var stepperMarkovNote:FlxUINumericStepper;
 	var stepperKatanaNote:FlxUINumericStepper;
+	var stepperMouseNote:FlxUINumericStepper;
+	var stepperDad2Note:FlxUINumericStepper;
+	var stepperDad1Note:FlxUINumericStepper;
 
-	var noteTypes:Array<String> = ['Normal', 'Fire', 'Death', 'Warning', 'Angel', 'Alt Anim', 'Bob', 'Glitch', 'Exe', 'Bsod', 'Markov', 'Katana'];
+	var noteTypes:Array<String> = ['Normal', 'Fire', 'Death', 'Warning', 'Angel', 'Alt Anim', 'Bob', 'Glitch', 'Exe', 'Bsod', 'Markov', 'Katana', 'Mouse', 'Dad2', 'Dad1'];
 	var typeChangeLabel:FlxText;
 
 	function addNoteUI():Void

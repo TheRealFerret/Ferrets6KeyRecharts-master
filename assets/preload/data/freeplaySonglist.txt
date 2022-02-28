@@ -7,10 +7,6 @@ Spookpostor:boo:1
 Epiphany:bigmonika:1
 Parasite:agoti:1
 Opheebop:opheebop:1
-Hard 2 Break:cheekygun:1
-Bad Eggroll:cheeky-Scared:1
-Cornucopia:cheeky-Scared:1
-Bad Omen:omen:1
 Attack:selever_angry:1
 Tickets Please:henryangry:1
 Too Slow:sonic:1
@@ -24,12 +20,17 @@ Old Endless:oldsonicfun:1
 Execution:oldsonicLordX:1
 No Villains:sonic-tgt:1
 Honorbound:soldierai:1
+Strongmann:heavy-box:1
 Crucify:taki:1
 Nonsensical:nonsense-god:1
-Algebra:og-dave:1
 Illusion:neomonster:1
+Genesis:fairestmonster-christmas:1
 Piracy:redbald:1
 Danger:herobrine:1
+Unknown Suffering:smileeeeer:1
+Happiness:bfbig:1
+Cheating:bambi-3d:1
+Algebra:og-dave:1
 Run:hellbob:1
 Onslaught:glitched-bob:1
 Bloodshed:hellron:1

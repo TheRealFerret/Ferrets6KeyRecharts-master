@@ -16,16 +16,65 @@ class HealthIcon extends FlxSprite
 		super();
 		switch(char)
 		{
+		case 'sonic-forced':
+			loadGraphic(Paths.image('sonic-forced'), true, 150, 150);
+	
+			antialiasing = true;
+			animation.add('sonic-forced', [0, 1], 0, false, isPlayer);
+		case 'sonic-mad':
+			loadGraphic(Paths.image('sonic-mad'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('sonic-mad', [0, 1], 0, false, isPlayer);
+		case 'sonic-tgt':
+			loadGraphic(Paths.image('sonic'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('sonic-tgt', [0, 1], 0, false, isPlayer);
+		case 'bfbig'|'happy':
+			loadGraphic(Paths.image('noticons'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('bfbig', [20, 21], 0, true, isPlayer);
+			animation.add('happy', [0, 1], 0, true, isPlayer);
+		case 'fairestmonster-christmas'|'bf-christmas3':
+			loadGraphic(Paths.image('softiconGrid'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('bf-christmas3', [0, 1], 0, false, isPlayer);
+			animation.add('fairestmonster-christmas', [19, 20], 0, false, isPlayer);
+		case 'bambi-3d':
+			loadGraphic(Paths.image('iconGridDaveBambi'), true, 150, 150);
+
+			antialiasing = false;
+			animation.add('bambi-3d', [20, 21], 0, false, isPlayer);
+		case 'bambi-old':
+			loadGraphic(Paths.image('iconGridDaveBambi'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('bambi-old', [18, 19], 0, false, isPlayer);
+		case 'smileeeeer'|'suicide':
+			loadGraphic(Paths.image('icon-mouse'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('smileeeeer', [0, 1], 0, false, isPlayer);
+			animation.add('suicide', [0, 1], 0, false, isPlayer);
+		case 'bf-retro':
+			loadGraphic(Paths.image('icon-bf-suicide'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('bf-retro', [0, 1], 0, false, isPlayer);
 		case 'herobrine':
 			loadGraphic(Paths.image('icon-herobrine'), true, 150, 150);
 
 			antialiasing = true;
 			animation.add('herobrine', [0, 1], 0, false, isPlayer);
-		case 'soldierai':
+		case 'soldierai'|'heavy-box':
 			loadGraphic(Paths.image('iconGridtf2'), true, 150, 150);
 
 			antialiasing = true;
 			animation.add('soldierai', [52, 53], 0, false, isPlayer);
+			animation.add('heavy-box', [50, 51], 0, false, isPlayer);
 		case 'hellron':
 			loadGraphic(Paths.image('iconGridinacoolway'), true, 150, 150);
 
@@ -75,14 +124,6 @@ class HealthIcon extends FlxSprite
 
 			antialiasing = true;
 			animation.add('selever_angry', [0, 1], 0, false, isPlayer);	
-		case 'bf-better' | 'sonic-tgt' | 'sonic-mad' | 'sonic-forced':
-			loadGraphic(Paths.image('iconGridTgt'), true, 150, 150);
-
-			antialiasing = true;
-			animation.add('sonic-tgt', [24, 25], 0, false, isPlayer);
-			animation.add('sonic-forced', [24, 25], 0, false, isPlayer);
-			animation.add('sonic-mad', [26, 27], 0, false, isPlayer);
-			animation.add('bf-better', [28, 29], 0, false, isPlayer);
 		case 'redbald':
 			loadGraphic(Paths.image('iconGridBaldi'), true, 150, 150);
 
@@ -94,38 +135,11 @@ class HealthIcon extends FlxSprite
 			antialiasing = true;
 			animation.add('hellbob', [28, 29], 0, false, isPlayer);
 			animation.add('glitched-bob', [34, 35], 0, false, isPlayer);
-		case 'bf-bob':
-			loadGraphic(Paths.image('iconGridCheeky3'), true, 150, 150);
-
-			antialiasing = true;
-			animation.add('bf-bob', [26, 27], 0, false, isPlayer);		
-		case 'cheeky-Scared': 
-			frames = Paths.getSparrowAtlas('cheekymad_icons');
-			animation.addByPrefix('Losing', 'CheekyMad_Winning', 24, false);
-			animation.addByPrefix('Winning', 'CheekyMad_Neutral', 24, false);
-
-			animation.play('Winning');
-			flipX = isPlayer;
-
-			antialiasing = true;
-			defaultWidth = 1.5;
-			setGraphicSize(Std.int(width / 1.5));	
 		case 'zardyMyBeloved':
 			loadGraphic(Paths.image('icon-zardyMyBeloved'), true, 150, 150);
 
 			antialiasing = true;
-			animation.add('zardyMyBeloved', [0, 1], 0, false, isPlayer);			
-		case 'omen': 
-			frames = Paths.getSparrowAtlas('omen_icons');
-			animation.addByPrefix('Winning', 'Cheeky_Winning', 24, false);
-			animation.addByPrefix('Losing', 'Cheeky_Losing', 24, false);
-
-			animation.play('Winning');
-			flipX = isPlayer;
-
-			antialiasing = true;
-			defaultWidth = 1.5;
-			setGraphicSize(Std.int(width / 1.5));	
+			animation.add('zardyMyBeloved', [0, 1], 0, false, isPlayer);	
 		case 'agoti':
 			loadGraphic(Paths.image('iconGridAgoti'), true, 150, 150);
 
@@ -154,18 +168,7 @@ class HealthIcon extends FlxSprite
 			antialiasing = true;
 			animation.add('bf-salty', [0, 1], 0, false, isPlayer);
 			animation.add('gf-itsumi', [16], 0, false, isPlayer);
-			animation.add('opheebop', [19, 20], 0, false, isPlayer);		
-		case 'cheekygun': 
-			frames = Paths.getSparrowAtlas('cheekygun_icons');
-			animation.addByPrefix('Winning', 'CheekyGun_Winning', 24, false);
-			animation.addByPrefix('Losing', 'CheekyGun_Winning', 24, false);
-
-			animation.play('Winning');
-			flipX = isPlayer;
-
-			antialiasing = true;
-			defaultWidth = 1.5;
-			setGraphicSize(Std.int(width / 1.5));
+			animation.add('opheebop', [19, 20], 0, false, isPlayer);
 		case 'bf-neoscared'|'neomonster':
 			loadGraphic(Paths.image('iconGridNeo'), true, 150, 150);
 
@@ -207,6 +210,7 @@ class HealthIcon extends FlxSprite
 			animation.add('bf-mii', [0, 1], 0, false, isPlayer);
 			animation.add('bf-gundeath', [0, 1], 0, false, isPlayer);
 			animation.add('bf-paldo', [0, 1], 0, false, isPlayer);
+			animation.add('bf-better', [0, 1], 0, false, isPlayer);
 			animation.add('bf-blue', [0, 1], 0, false, isPlayer);
 			animation.add('bf-super', [0, 1], 0, false, isPlayer);
 			animation.add('bf-tf2', [0, 1], 0, false, isPlayer);

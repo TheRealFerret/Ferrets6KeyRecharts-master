@@ -152,6 +152,26 @@ class NoHealthGain extends Option
 	}
 }
 
+class PainfulGood extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.painfulGood = !FlxG.save.data.painfulGood;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Painful Good " + (!FlxG.save.data.painfulGood ? "off" : "on");
+	}
+}
+
 class EnemyDrain extends Option
 {
 	public function new(desc:String)
@@ -169,6 +189,26 @@ class EnemyDrain extends Option
 	private override function updateDisplay():String
 	{
 		return "Enemy Drain " + (!FlxG.save.data.enemyDrain ? "off" : "on");
+	}
+}
+
+class GhostNotes extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.ghostNotes = !FlxG.save.data.ghostNotes;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Ghost Notes " + (!FlxG.save.data.ghostNotes ? "off" : "on");
 	}
 }
 

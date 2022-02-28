@@ -30,8 +30,10 @@ class OptionsMenu extends MusicBeatState
 			new SickOnlyOption("Get anything other than a SICK, and you die."),
 			new HalvedHealthGain("The amount of health you gain is halved."),
 			new NoHealthGain("You won't gain health, you will only lose health."),
+			new PainfulGood("GOOD Ratings will deal as much damage as a BAD."),
 			new EnemyDrain("The enemy will also gain health, but only until you are nearly dead."),
 			new HalvedMaxHealth("The amount of max health you have is halved."),
+			new GhostNotes("The notes will become more invisible when it gets closer to the strumline."),
 		]),
 		new OptionCategory("Diff Decreasing Modifiers", [
 			new DoubleHealthGain("The amount of health you gain is doubled."),
