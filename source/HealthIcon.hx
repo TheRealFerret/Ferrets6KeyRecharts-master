@@ -69,12 +69,13 @@ class HealthIcon extends FlxSprite
 
 			antialiasing = true;
 			animation.add('herobrine', [0, 1], 0, false, isPlayer);
-		case 'soldierai'|'heavy-box':
+		case 'soldierai'|'heavy-box'|'snoiper':
 			loadGraphic(Paths.image('iconGridtf2'), true, 150, 150);
 
 			antialiasing = true;
 			animation.add('soldierai', [52, 53], 0, false, isPlayer);
 			animation.add('heavy-box', [50, 51], 0, false, isPlayer);
+			animation.add('snoiper', [42, 43], 0, false, isPlayer);
 		case 'hellron':
 			loadGraphic(Paths.image('iconGridinacoolway'), true, 150, 150);
 

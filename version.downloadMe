@@ -1,3 +1,6 @@
-1.5.4;
-- Controller Support
-- Fixed Input Drops/Disappering Notes
+1.2.1;
+- Fixed Ghost Notes Not Working on Lua Modcharts
+- Added Skill Issue (Comes With An Extra Difficulty)
+- Added Invisible Notes Modifier
+- Disabling Flashing Lights Works on Most Songs
+- You Can Disable Startup Info and Outdated Messages

@@ -34,6 +34,7 @@ class OptionsMenu extends MusicBeatState
 			new EnemyDrain("The enemy will also gain health, but only until you are nearly dead."),
 			new HalvedMaxHealth("The amount of max health you have is halved."),
 			new GhostNotes("The notes will become more invisible when it gets closer to the strumline."),
+			new InvisibleNotes("The notes are completely invisible because fuck you."),
 		]),
 		new OptionCategory("Diff Decreasing Modifiers", [
 			new DoubleHealthGain("The amount of health you gain is doubled."),
@@ -98,6 +99,8 @@ class OptionsMenu extends MusicBeatState
 			new Optimization("No backgrounds, no characters, centered notes, no player 2."),
 			new GraphicLoading("On startup, cache every character. Significantly decrease load times. (HIGH MEMORY)"),
 			new BotPlay("Showcase your charts and mods with autoplay."),
+			new NoInfoMessage("Doesn't show the info message on startup."),
+			new NoOutdatedMessage("Doesn't show the outdated message on startup."),
 		]),
 		new OptionCategory("Saves and Data", [
 			#if desktop

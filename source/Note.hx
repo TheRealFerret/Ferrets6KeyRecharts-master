@@ -50,6 +50,7 @@ class Note extends FlxSprite
 	public var mouse:Bool = false; //mouse
 	public var dad2:Bool = false;// heavy shit
 	public var dad1:Bool = false;// medic shit but it's actually more heavy shit
+	public var snoiper:Bool = false;// snoiper shit
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -182,6 +183,7 @@ class Note extends FlxSprite
 		mouse = noteType == 12;
 		dad2 = noteType == 13;
 		dad1 = noteType == 14;
+		snoiper = noteType == 15;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -306,7 +308,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana || mouse || dad2 || dad1)
+				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana || mouse || dad2 || dad1 || snoiper)
 					{
 						switch(noteType)
 						{
@@ -411,7 +413,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana || mouse || dad2 || dad1)
+				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana || mouse || dad2 || dad1 || snoiper)
 					{
 						switch(noteType)
 						{

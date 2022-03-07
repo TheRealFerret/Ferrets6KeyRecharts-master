@@ -212,6 +212,26 @@ class GhostNotes extends Option
 	}
 }
 
+class InvisibleNotes extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.invisibleNotes = !FlxG.save.data.invisibleNotes;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Invisible Notes " + (!FlxG.save.data.invisibleNotes ? "off" : "on");
+	}
+}
+
 class HalvedMaxHealth extends Option
 {
 	public function new(desc:String)
@@ -1077,6 +1097,46 @@ class BotPlay extends Option
 	
 	private override function updateDisplay():String
 		return "BotPlay " + (FlxG.save.data.botplay ? "on" : "off");
+}
+
+class NoInfoMessage extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.noInfoMessage = !FlxG.save.data.noInfoMessage;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "No Info Message " + (!FlxG.save.data.noInfoMessage ? "off" : "on");
+	}
+}
+
+class NoOutdatedMessage extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.noOutdatedMessage = !FlxG.save.data.noOutdatedMessage;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "No Outdated Message " + (!FlxG.save.data.noOutdatedMessage ? "off" : "on");
+	}
 }
 
 class CamZoomOption extends Option

@@ -2417,6 +2417,26 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -8, 23);
 
 				playAnim('idle');
+			case 'snoiper':
+				iconColor = 'FFf9f9f9';
+				tex = Paths.getSparrowAtlas('characters/snoiper gaming');
+				frames = tex;
+				animation.addByPrefix('idle', "Pico Idle Dance", 24, false);
+				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
+				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
+				animation.addByPrefix('singRIGHT', 'Pico Note Right0', 24, false);
+				animation.addByPrefix('singLEFT', 'Pico NOTE LEFT0', 24, false);
+				animation.addByPrefix('shot', 'shooting', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -110, 290);
+				addOffset("singRIGHT", -110, 70);
+				addOffset("singLEFT", -10, -30);
+				addOffset("singDOWN", -70, -90);
+				addOffset("shot", 63, 200);
+
+				playAnim('idle');
+
 		}
 
 		dance();

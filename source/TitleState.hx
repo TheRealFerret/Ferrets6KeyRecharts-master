@@ -316,9 +316,9 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
-				// Get current version of Kade Engine
+				// Get current version of Ferret's 6K Recharts
 				
-				var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
+				var http = new haxe.Http("https://raw.githubusercontent.com/TheRealFerret/Ferrets6KeyRecharts-master/main/version.downloadMe");
 				var returnedData:Array<String> = [];
 				
 				http.onData = function (data:String)
@@ -327,14 +327,27 @@ class TitleState extends MusicBeatState
 					returnedData[1] = data.substring(data.indexOf('-'), data.length);
 				  	if (!MainMenuState.kadeEngineVer.contains(returnedData[0].trim()) && !OutdatedSubState.leftState && MainMenuState.nightly == "")
 					{
-						trace('take a seat, lets talk');
-						OutdatedSubState.needVer = returnedData[0];
-						OutdatedSubState.currChanges = returnedData[1];
-						FlxG.switchState(new OutdatedSubState());
+						if (FlxG.save.data.noOutdatedMessage && !FlxG.save.data.noInfoMessage){
+							FlxG.switchState(new InfoSubState());
+						}
+						else if (FlxG.save.data.noOutdatedMessage && FlxG.save.data.noInfoMessage){
+							FlxG.switchState(new MainMenuState());
+						}
+						else{
+							trace('take a seat, lets talk');
+							OutdatedSubState.needVer = returnedData[0];
+							OutdatedSubState.currChanges = returnedData[1];
+							FlxG.switchState(new OutdatedSubState());
+						}
 					}
 					else
 					{
-						FlxG.switchState(new MainMenuState());
+						if (FlxG.save.data.noInfoMessage){
+							FlxG.switchState(new MainMenuState());
+						}
+						else{
+							FlxG.switchState(new InfoSubState());
+						}
 					}
 				}
 				

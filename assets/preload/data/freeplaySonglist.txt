@@ -21,6 +21,7 @@ Execution:oldsonicLordX:1
 No Villains:sonic-tgt:1
 Honorbound:soldierai:1
 Strongmann:heavy-box:1
+Skill Issue:snoiper:1
 Crucify:taki:1
 Nonsensical:nonsense-god:1
 Illusion:neomonster:1

@@ -43,11 +43,14 @@ class OutdatedSubState extends MusicBeatState
 		add(kadeLogo);
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"Hey! Thanks for playing! \nPlease read this if you haven't seen it yet."
-			+ "\n\nThanks for playing this mod. \nTake note that while I've made most of these recharts, \nAbyss made the recharts for \nMilk, Run, Too Fest, Algebra, and Genesis. \nThanks Abyss!"
-			+ "\n\nThere is a Discord server for this mod. \nIf you want to join, press ESCAPE/BACKSPACE or press on the Discord option in the main menu."
-			+ "\n\nThis mod's version is currently 1.2.0"
-			+ "\n\nPress SPACE or ENTER to leave this screen",
+			"Ayo you got an outdated version of Ferret's 6 Key Recharts!\nThis version is"
+			+ MainMenuState.kadeEngineVer
+			+ "\nwhile the most recent version is " + needVer + "."
+			/*+ "\n\nWhat's new:\n\n"
+			+ currChanges
+			+ "\n& more changes and bugfixes in the full changelog"*/
+			+ "\n\nPress Space to view the full changelog and update\nor ESCAPE to ignore this if you want to stay in this version"
+			+ "\n\nYou can disable this message in MISC Settings",
 			32);
 		
 		txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
@@ -84,12 +87,12 @@ class OutdatedSubState extends MusicBeatState
 	{
 		if (controls.ACCEPT)
 		{
-			leftState = true;
-			FlxG.switchState(new MainMenuState());
+			fancyOpenURL("https://github.com/TheRealFerret/Ferrets6KeyRecharts-master/releases/tag/" + needVer);
 		}
 		if (controls.BACK)
 		{
-			fancyOpenURL("https://discord.gg/nxxa34eBYF");
+			leftState = true;
+			FlxG.switchState(new InfoSubState());
 		}
 		super.update(elapsed);
 	}

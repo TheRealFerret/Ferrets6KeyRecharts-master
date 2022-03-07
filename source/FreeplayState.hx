@@ -250,7 +250,11 @@ class FreeplayState extends MusicBeatState
 			
 			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName);
 			PlayState.isStoryMode = false;
-			PlayState.storyDifficulty = curDifficulty;
+		//	if (songs[curSelected].songName == 'Skill Issue')
+				PlayState.storyDifficulty = curDifficulty;
+		//	else
+		//		PlayState.storyDifficulty = 1;
+				
 			PlayState.storyWeek = songs[curSelected].week;
 			trace('CUR WEEK' + PlayState.storyWeek);
 			LoadingState.loadAndSwitchState(new PlayState());
@@ -261,10 +265,18 @@ class FreeplayState extends MusicBeatState
 	{
 		curDifficulty += change;
 
-		if (curDifficulty < 1)
-			curDifficulty = 1;
-		if (curDifficulty > 1)
-			curDifficulty = 1;
+		if (songs[curSelected].songName == 'Skill Issue'){
+			if (curDifficulty < 1)
+				curDifficulty = 2;
+			if (curDifficulty > 2)
+				curDifficulty = 1;
+		}
+		else{
+			if (curDifficulty < 1)
+				curDifficulty = 1;
+			if (curDifficulty > 1)
+				curDifficulty = 1;
+		}
 
 		// adjusting the highscore song name to be compatible (changeDiff)
 		var songHighscore = StringTools.replace(songs[curSelected].songName, " ", "-");
@@ -278,7 +290,21 @@ class FreeplayState extends MusicBeatState
 		combo = Highscore.getCombo(songHighscore, curDifficulty);
 		#end
 
-		diffText.text = CoolUtil.difficultyFromInt(curDifficulty).toUpperCase();
+		if (songs[curSelected].songName == 'Skill Issue')
+		{
+			switch (curDifficulty)
+			{
+				case 0:
+					diffText.text = "6K BOT";
+				case 1:
+					diffText.text = "6 KEY";
+				case 2:
+					diffText.text = "6K TRYHARD";
+			}
+		}
+		else{
+			diffText.text = "6 KEY";
+		}
 	}
 
 	function changeSelection(change:Int = 0)

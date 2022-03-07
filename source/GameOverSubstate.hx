@@ -247,6 +247,23 @@ class GameOverSubstate extends MusicBeatSubstate
 			}
 		Conductor.changeBPM(100);
 
+		new FlxTimer().start(0.5, function(tmr:FlxTimer)
+			{
+				switch (daStage)
+				{
+					case 'honor':
+						FlxG.sound.play(Paths.soundRandom('death/soldier_', 1, 4),1);
+					case 'barnblitz-heavy':
+						FlxG.sound.play(Paths.soundRandom('death/heavy_', 1, 4),1);
+					default:
+						if (PlayState.SONG.song.toLowerCase() == 'skill issue')
+							{
+								FlxG.sound.play(Paths.sound('death/skill'),1);
+							}
+				}
+				// holy shit thats a lot of cases -tob
+			});
+
 		// FlxG.camera.followLerp = 1;
 		// FlxG.camera.focusOn(FlxPoint.get(FlxG.width / 2, FlxG.height / 2));
 		FlxG.camera.scroll.set();
