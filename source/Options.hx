@@ -332,6 +332,26 @@ class Vfx extends Option
 	}
 }
 
+class NoTriggerFlip extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.noTriggerFlip = !FlxG.save.data.noTriggerFlip;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "No Infitrigger Flip " + (!FlxG.save.data.noTriggerFlip ? "off" : "on");
+	}
+}
+
 class HappyVersion extends Option
 {
 	public function new(desc:String)
@@ -800,7 +820,26 @@ class ScoreScreen extends Option
 	}
 }
 
+class Fullscreen extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
 
+	public override function press():Bool
+	{
+		FlxG.save.data.fullscreen = !FlxG.save.data.fullscreen;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Fullscreen " + (!FlxG.save.data.fullscreen ? "off" : "on");
+	}
+}
 
 
 class FPSCapOption extends Option
@@ -852,7 +891,6 @@ class FPSCapOption extends Option
 		(FlxG.save.data.fpsCap == Application.current.window.displayMode.refreshRate ? "Hz (Refresh Rate)" : "");
 	}
 }
-
 
 class ScrollSpeedOption extends Option
 {

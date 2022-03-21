@@ -19,6 +19,7 @@ Too Fest:sanic:1
 Old Endless:oldsonicfun:1
 Execution:oldsonicLordX:1
 No Villains:sonic-tgt:1
+Phantasm:bf-fleetway-chaos:1
 Honorbound:soldierai:1
 Strongmann:heavy-box:1
 Skill Issue:snoiper:1
@@ -27,6 +28,7 @@ Nonsensical:nonsense-god:1
 Illusion:neomonster:1
 Genesis:fairestmonster-christmas:1
 Piracy:redbald:1
+Infitrigger:cancer:1
 Danger:herobrine:1
 Unknown Suffering:smileeeeer:1
 Happiness:bfbig:1

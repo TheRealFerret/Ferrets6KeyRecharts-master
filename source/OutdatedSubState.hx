@@ -43,12 +43,11 @@ class OutdatedSubState extends MusicBeatState
 		add(kadeLogo);
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"Ayo you got an outdated version of Ferret's 6 Key Recharts!\nThis version is"
-			+ MainMenuState.kadeEngineVer
+			"Ayo you got an outdated version of Ferret's 6 Key Recharts!\nThis version is "
+			+ MainMenuState.gameVer
 			+ "\nwhile the most recent version is " + needVer + "."
-			/*+ "\n\nWhat's new:\n\n"
+			+ "\n\nMajor Changes:\n\n"
 			+ currChanges
-			+ "\n& more changes and bugfixes in the full changelog"*/
 			+ "\n\nPress Space to view the full changelog and update\nor ESCAPE to ignore this if you want to stay in this version"
 			+ "\n\nYou can disable this message in MISC Settings",
 			32);
@@ -92,7 +91,10 @@ class OutdatedSubState extends MusicBeatState
 		if (controls.BACK)
 		{
 			leftState = true;
-			FlxG.switchState(new InfoSubState());
+			if (FlxG.save.data.noInfoMessage)
+				FlxG.switchState(new MainMenuState());
+			else
+				FlxG.switchState(new InfoSubState());
 		}
 		super.update(elapsed);
 	}

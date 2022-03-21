@@ -48,3 +48,5 @@ hapenis
 issue
 issue-two
 issue-three
+bonus
+fleet

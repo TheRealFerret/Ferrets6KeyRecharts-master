@@ -43,7 +43,7 @@ class InfoSubState extends MusicBeatState
 			"Hey! Thanks for playing! \nPlease read this if you haven't seen it yet."
 			+ "\n\nThanks for playing this mod. \nTake note that while I've made most of these recharts, \nAbyss made the recharts for \nMilk, Run, Too Fest, Algebra, and Genesis. \nThanks Abyss!"
 			+ "\n\nThere is a Discord server for this mod. \nIf you want to join, press ESCAPE/BACKSPACE or press on the Discord option in the main menu."
-			+ "\n\nThis mod's version is currently 1.2.1"
+			+ "\n\nThis mod's version is currently " + MainMenuState.gameVer
 			+ "\n\nPress SPACE or ENTER to leave this screen"
 			+ "\n\nYou can disable this message in MISC Settings",
 			32);

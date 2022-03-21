@@ -2083,6 +2083,7 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 			case 'bf-tf2':
+				iconColor = 'FF31b0d1';
 				var tex = Paths.getSparrowAtlas('characters/BOYFRIENDtf2', 'shared');
 				frames = tex;
 
@@ -2437,6 +2438,118 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'bf-alt':
+				iconColor = 'FF007ad4';
+				////2.5D boyfriend assets///
+				var tex = Paths.getSparrowAtlas('characters/bfalt', 'shared');
+				frames = tex;
+	
+				//trace(tex.frames.length);
+	
+				animation.addByPrefix('idle', 'bf_idle', 24, false);
+				animation.addByPrefix('singUP', 'bf_up0', 24, false);
+				animation.addByPrefix('singLEFT', 'bf_left0', 24, false);
+				animation.addByPrefix('singRIGHT', 'bf_right0', 24, false);
+				animation.addByPrefix('singDOWN', 'bf_down0', 24, false);
+				animation.addByPrefix('singUPmiss', 'bf_up_miss', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'bf_left_miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'bf_right_miss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'bf_down_miss', 24, false);					
+					
+				animation.addByPrefix('firstDeath', "bf_dead_1", 24, false);
+				animation.addByPrefix('deathLoop', "bf_dead_2", 24, true);
+				animation.addByPrefix('deathConfirm',"bf_dead_3", 24,false);
+			
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+	
+				playAnim('idle');
+				flipX = true;
+
+			case 'cancer':
+				iconColor = 'FFce2bc6';
+				// cancer  ANIMATION  CODE
+				tex = Paths.getSparrowAtlas('characters/cancer', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'cancer_idle', 24,false);
+				animation.addByPrefix('singUP', 'cancer_up', 24,false);
+				animation.addByPrefix('singRIGHT', 'cancer_right', 24,false);
+				animation.addByPrefix('singDOWN', 'cancer_down', 24,false);
+				animation.addByPrefix('singLEFT', 'cancer_left', 24,false);
+				scale.set(0.92,0.92);
+
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+	
+				playAnim('idle');
+			
+			case 'bf-sonic-chaos':
+				iconColor = 'FF284289';
+				tex = Paths.getSparrowAtlas('characters/sonic fw');
+				frames = tex;
+				animation.addByPrefix('idle', 'Sonic idle', 24, false);
+				animation.addByPrefix('singUP', 'Sonic up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Sonic right', 24, false);
+				animation.addByPrefix('singDOWN', 'Sonic down', 24, false);
+				animation.addByPrefix('singLEFT', 'Sonic left', 24, false);
+				animation.addByPrefix('singUPmiss', 'MISS Sonic up', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'MISS Sonic left', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'MISS Sonic right', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'MISS Sonic down', 24, false);
+
+				animation.addByPrefix('firstDeath', "GAME OVER", 24, false);
+				animation.addByPrefix('deathLoop', "GAME OVER loop", 24, true);
+				animation.addByPrefix('deathConfirm',"GAME OVER enter", 24,false);	
+
+				addOffset('idle');
+				addOffset("singUP", -30, -9);
+				addOffset("singRIGHT", -29, -1);
+				addOffset("singLEFT", 8, 3);
+				addOffset("singDOWN");
+				addOffset("singUPmiss", -29, 0);
+				addOffset("singRIGHTmiss", 17, 6);
+				addOffset("singLEFTmiss", 30, 14);
+				addOffset("singDOWNmiss", 0, 3);
+				addOffset("firstDeath", -14, -11);
+				addOffset("deathLoop", -20, -14);
+				addOffset("deathConfirm", -27, -10);
+
+				updateHitbox();
+
+				flipX = true;
+			case 'bf-fleetway-chaos':
+				iconColor = 'FFffaa30';
+				tex = Paths.getSparrowAtlas('characters/fleetway');
+				frames = tex;
+				animation.addByPrefix('idle', 'Fleet left', 1, false);
+				animation.addByPrefix('singUP', 'Fleet up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Fleet right', 24, false);
+				animation.addByPrefix('singDOWN', 'Fleet down', 24, false);
+				animation.addByPrefix('singLEFT', 'Fleet left', 24, false);
+				animation.addByPrefix('singUPmiss', 'MISS Fleet up', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'MISS Fleet left', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'MISS Fleet right', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'MISS Fleet down', 24, false);
+
+				addOffset('idle', 35, 22);
+				addOffset("singUP", -22, -31);
+				addOffset("singRIGHT", -20, 14);
+				addOffset("singLEFT", 35, 22);
+				addOffset("singDOWN");
+				addOffset("singUPmiss", -14, 3);
+				addOffset("singRIGHTmiss", -19, 10);
+				addOffset("singLEFTmiss", 47, 20);
+				addOffset("singDOWNmiss", 10, -10);
+
+				updateHitbox();
+
+				flipX = true;
 		}
 
 		dance();

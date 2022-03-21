@@ -378,12 +378,15 @@ class ModchartState
 				}
 
 				// get some fukin globals up in here bois
-	
+				
+				setVar("noTriggerFlip", FlxG.save.data.noTriggerFlip); //can't belive that i have to do this
+				
 				setVar("difficulty", PlayState.storyDifficulty);
 				setVar("bpm", Conductor.bpm);
 				setVar("scrollspeed", FlxG.save.data.scrollSpeed != 1 ? FlxG.save.data.scrollSpeed : PlayState.SONG.speed);
 				setVar("fpsCap", FlxG.save.data.fpsCap);
 				setVar("downscroll", FlxG.save.data.downscroll);
+				setVar("middlescroll", FlxG.save.data.middlescroll);
 				setVar("flashing", FlxG.save.data.flashing);
 				setVar("distractions", FlxG.save.data.distractions);
 	

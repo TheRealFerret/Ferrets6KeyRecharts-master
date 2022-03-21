@@ -40,6 +40,9 @@ class OptionsMenu extends MusicBeatState
 			new DoubleHealthGain("The amount of health you gain is doubled."),
 			new DoubleMaxHealth("The amount of max health you have is doubled."),
 		]),
+		new OptionCategory("v tan", [
+			new NoTriggerFlip("Disable the Inverted Controls Mechanic on Infitrigger")
+		]),
 		new OptionCategory("bob", [
 			new ScaryBS("disable the eye thing"),
 			new ShakingScreen("disable the screen shaking"),
@@ -101,6 +104,7 @@ class OptionsMenu extends MusicBeatState
 			new BotPlay("Showcase your charts and mods with autoplay."),
 			new NoInfoMessage("Doesn't show the info message on startup."),
 			new NoOutdatedMessage("Doesn't show the outdated message on startup."),
+			new Fullscreen("Enter Fullscreen Mode.")
 		]),
 		new OptionCategory("Saves and Data", [
 			#if desktop
@@ -122,6 +126,11 @@ class OptionsMenu extends MusicBeatState
 	var blackBorder:FlxSprite;
 	override function create()
 	{
+		if (FlxG.save.data.fullscreen)
+			Lib.application.window.fullscreen = true;
+		else
+			Lib.application.window.fullscreen = false;
+
 		instance = this;
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
 

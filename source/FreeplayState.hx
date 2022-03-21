@@ -13,6 +13,7 @@ import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
+import openfl.Lib;
 
 
 #if windows
@@ -43,6 +44,11 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
+		if (FlxG.save.data.fullscreen)
+			Lib.application.window.fullscreen = true;
+		else
+			Lib.application.window.fullscreen = false;
+
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
 
 		for (i in 0...initSonglist.length)

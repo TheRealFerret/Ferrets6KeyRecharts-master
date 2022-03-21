@@ -79,3 +79,7 @@ bf-christmas3
 bfbig
 happy
 snoiper
+bf-alt
+cancer
+bf-sonic-chaos
+bf-fleetway-chaos

@@ -51,6 +51,7 @@ class Note extends FlxSprite
 	public var dad2:Bool = false;// heavy shit
 	public var dad1:Bool = false;// medic shit but it's actually more heavy shit
 	public var snoiper:Bool = false;// snoiper shit
+	public var ebola:Bool = false;// ebola
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -184,6 +185,7 @@ class Note extends FlxSprite
 		dad2 = noteType == 13;
 		dad1 = noteType == 14;
 		snoiper = noteType == 15;
+		ebola = noteType == 16;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -308,7 +310,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana || mouse || dad2 || dad1 || snoiper)
+				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana || mouse || dad2 || dad1 || snoiper || ebola)
 					{
 						switch(noteType)
 						{
@@ -399,6 +401,14 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + ' instancia 1'); // Normal notes
 										animation.addByPrefix(noteColors[i] + 'hold', 'mouse hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', 'mouse hold end'); // Tails
+									}
+							case 16:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/Pnotes');
+								for (i in 0...11)
+									{
+										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + ' alone'); // Normal notes
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' tail'); // Tails
 									}					
 						}
 					}
@@ -413,7 +423,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana || mouse || dad2 || dad1 || snoiper)
+				if (burning || death || warning || angel || bob || glitch || exe || bsod || markov || katana || mouse || dad2 || dad1 || snoiper || ebola)
 					{
 						switch(noteType)
 						{
@@ -504,6 +514,14 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + ' instancia 1'); // Normal notes
 										animation.addByPrefix(noteColors[i] + 'hold', 'mouse hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', 'mouse hold end'); // Tails
+									}
+							case 16:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/Pnotes');
+								for (i in 0...11)
+									{
+										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + ' alone'); // Normal notes
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' tail'); // Tails
 									}				
 						}
 					}

@@ -17,6 +17,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
+import openfl.Lib;
 
 #if windows
 import Discord.DiscordClient;
@@ -43,7 +44,7 @@ class MainMenuState extends MusicBeatState
 	public static var nightly:String = "";
 
 	public static var kadeEngineVer:String = "1.5.4 EK" + nightly;
-	public static var gameVer:String = "F6KR 1.2.1";
+	public static var gameVer:String = "F6KR 1.2.2";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -51,6 +52,11 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
+		if (FlxG.save.data.fullscreen)
+			Lib.application.window.fullscreen = true;
+		else
+			Lib.application.window.fullscreen = false;
+
 		#if windows
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);

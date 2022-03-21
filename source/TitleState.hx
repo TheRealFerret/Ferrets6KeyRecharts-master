@@ -28,6 +28,7 @@ import flixel.util.FlxTimer;
 import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
+import openfl.Lib;
 
 #if windows
 import Discord.DiscordClient;
@@ -55,7 +56,11 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		
+		if (FlxG.save.data.fullscreen)
+			Lib.application.window.fullscreen = true;
+		else
+			Lib.application.window.fullscreen = false;
+
 		#if sys
 		if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
 			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
@@ -325,29 +330,21 @@ class TitleState extends MusicBeatState
 				{
 					returnedData[0] = data.substring(0, data.indexOf(';'));
 					returnedData[1] = data.substring(data.indexOf('-'), data.length);
-				  	if (!MainMenuState.kadeEngineVer.contains(returnedData[0].trim()) && !OutdatedSubState.leftState && MainMenuState.nightly == "")
+				  	if (!MainMenuState.gameVer.contains(returnedData[0].trim()) && !OutdatedSubState.leftState && MainMenuState.nightly == "")
 					{
-						if (FlxG.save.data.noOutdatedMessage && !FlxG.save.data.noInfoMessage){
-							FlxG.switchState(new InfoSubState());
-						}
-						else if (FlxG.save.data.noOutdatedMessage && FlxG.save.data.noInfoMessage){
-							FlxG.switchState(new MainMenuState());
-						}
-						else{
-							trace('take a seat, lets talk');
-							OutdatedSubState.needVer = returnedData[0];
-							OutdatedSubState.currChanges = returnedData[1];
+						trace('take a seat, lets talk');
+						OutdatedSubState.needVer = returnedData[0];
+						OutdatedSubState.currChanges = returnedData[1];
+						if (!FlxG.save.data.noOutdatedMessage)
 							FlxG.switchState(new OutdatedSubState());
-						}
+					}
+					else if (!FlxG.save.data.noInfoMessage)
+					{
+						FlxG.switchState(new InfoSubState());
 					}
 					else
 					{
-						if (FlxG.save.data.noInfoMessage){
-							FlxG.switchState(new MainMenuState());
-						}
-						else{
-							FlxG.switchState(new InfoSubState());
-						}
+						FlxG.switchState(new MainMenuState());
 					}
 				}
 				

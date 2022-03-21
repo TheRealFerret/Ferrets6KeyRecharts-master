@@ -70,6 +70,10 @@ class GameOverSubstate extends MusicBeatSubstate
 				daBf = 'bf-tf2';
 			case 'bfbig':
 				daBf = 'bfbig';
+			case 'bf-alt':
+				daBf = 'bf-alt';
+			case 'bf-sonic-chaos'|'bf-fleetway-chaos':
+				daBf = 'bf-sonic-chaos';
 			default:
 				daBf = 'bf';
 		}

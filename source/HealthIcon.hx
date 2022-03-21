@@ -16,6 +16,26 @@ class HealthIcon extends FlxSprite
 		super();
 		switch(char)
 		{
+		case 'bf-sonic-chaos':
+			loadGraphic(Paths.image('sonic icons'), true, 150, 150);
+	
+			antialiasing = true;
+			animation.add('bf-sonic-chaos', [0, 1], 0, false, isPlayer);
+		case 'bf-fleetway-chaos':
+			loadGraphic(Paths.image('fleetway icons'), true, 150, 150);
+	
+			antialiasing = true;
+			animation.add('bf-fleetway-chaos', [0, 1], 0, false, isPlayer);
+		case 'cancer':
+			loadGraphic(Paths.image('icon-cancer'), true, 150, 150);
+	
+			antialiasing = true;
+			animation.add('cancer', [0, 1], 0, false, isPlayer);
+		case 'bf-alt':
+			loadGraphic(Paths.image('icon-bf-v'), true, 150, 150);
+	
+			antialiasing = true;
+			animation.add('bf-alt', [0, 1], 0, false, isPlayer);
 		case 'sonic-forced':
 			loadGraphic(Paths.image('sonic-forced'), true, 150, 150);
 	
@@ -27,7 +47,7 @@ class HealthIcon extends FlxSprite
 			antialiasing = true;
 			animation.add('sonic-mad', [0, 1], 0, false, isPlayer);
 		case 'sonic-tgt':
-			loadGraphic(Paths.image('sonic'), true, 150, 150);
+			loadGraphic(Paths.image('sonic-tgt'), true, 150, 150);
 
 			antialiasing = true;
 			animation.add('sonic-tgt', [0, 1], 0, false, isPlayer);
