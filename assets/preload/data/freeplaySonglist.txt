@@ -1,3 +1,4 @@
+Bopeebo:dad:1
 Madness:tricky:1
 Expurgation:extricky:1
 Foolhardy:zardyMyBeloved:1
@@ -10,6 +11,8 @@ Opheebop:opheebop:1
 Attack:selever_angry:1
 Tickets Please:henryangry:1
 Too Slow:sonic:1
+You Cant Run:sonic.exe:1
+Triple Trouble:beast:1
 Endless:sonicfun:1
 Cycles:sonicLordX:1
 Milk:sunky:1
@@ -20,7 +23,9 @@ Old Endless:oldsonicfun:1
 Execution:oldsonicLordX:1
 No Villains:sonic-tgt:1
 Phantasm:bf-fleetway-chaos:1
+Infiltrator:spy:1
 Honorbound:soldierai:1
+Eyelander:demoknight:1
 Strongmann:heavy-box:1
 Skill Issue:snoiper:1
 Crucify:taki:1
@@ -28,6 +33,7 @@ Nonsensical:nonsense-god:1
 Illusion:neomonster:1
 Genesis:fairestmonster-christmas:1
 Piracy:redbald:1
+Sage:v-rage:1
 Infitrigger:cancer:1
 Danger:herobrine:1
 Unknown Suffering:smileeeeer:1

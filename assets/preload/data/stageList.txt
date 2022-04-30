@@ -50,3 +50,8 @@ issue-two
 issue-three
 bonus
 fleet
+SONICexestage
+chantown
+TrioStage
+snake-spy
+degroot

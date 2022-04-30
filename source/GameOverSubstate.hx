@@ -74,6 +74,12 @@ class GameOverSubstate extends MusicBeatSubstate
 				daBf = 'bf-alt';
 			case 'bf-sonic-chaos'|'bf-fleetway-chaos':
 				daBf = 'bf-sonic-chaos';
+			case 'bf-pixel-alt':
+				daBf = 'bf-pixel-alt';
+			case 'bfnew':
+				daBf = 'bfnew';
+			case 'bf-v':
+				daBf = 'bf-v';
 			default:
 				daBf = 'bf';
 		}
@@ -85,8 +91,6 @@ class GameOverSubstate extends MusicBeatSubstate
 			case 'tricky' | 'extricky':
 				stageSuffix = '-clown';
 				daBf = 'bf-signDeath';
-			case 'cheekygun':
-				daBf = 'bf-gundeath';
 			case 'black':
 			{
 				if(FlxG.random.bool(5))	
@@ -152,18 +156,18 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				majinBf = new Boyfriend(x, y, 'bf-blue');
 				majinBf.visible = false;
-				majinBf.antialiasing = true;
+				majinBf.antialiasing = FlxG.save.data.antialiasing;
 				add(majinBf);
 			}
 			
-		if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'execution')
+		if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'you cant run')
 			{
 				sonicDEATH = new SonicDeathAnimation(Std.int(bf.x) - 80, Std.int(bf.y) - 350);
 	
 				sonicDEATH.scale.x = 2;
 				sonicDEATH.scale.y = 2;
 	
-				sonicDEATH.antialiasing = true;
+				sonicDEATH.antialiasing = FlxG.save.data.antialiasing;
 				sonicDEATH.playAnim('firstDEATH');
 				add(sonicDEATH);
 			}
@@ -255,10 +259,14 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				switch (daStage)
 				{
+					case 'snake-spy':
+						FlxG.sound.play(Paths.soundRandom('death/spy_', 1, 3),1);
 					case 'honor':
 						FlxG.sound.play(Paths.soundRandom('death/soldier_', 1, 4),1);
 					case 'barnblitz-heavy':
 						FlxG.sound.play(Paths.soundRandom('death/heavy_', 1, 4),1);
+					case 'barnblitz-engi':
+						FlxG.sound.play(Paths.soundRandom('death/engi_', 1, 4),1);
 					default:
 						if (PlayState.SONG.song.toLowerCase() == 'skill issue')
 							{
@@ -412,7 +420,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
 			switch (PlayState.SONG.song.toLowerCase())
 			{
-				case 'too slow' | 'endless' | 'old endless' | 'execution':
+				case 'too slow' | 'endless' | 'old endless' | 'execution' | 'you cant run' | 'triple trouble':
 					FlxG.sound.playMusic(Paths.music('gameOver-Exe'));
 				case 'milk':
 					FlxTween.tween(bfdeathshit, {alpha: 1}, 1);
@@ -479,10 +487,10 @@ class GameOverSubstate extends MusicBeatSubstate
 			isEnding = true;
 			voiceline.volume = 0;
 			bf.playAnim('deathConfirm', true);
-			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'execution')
+			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'you cant run')
 				sonicDEATH.playAnim('retry', true);
 			FlxG.sound.music.stop();
-			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'old endless' || PlayState.SONG.song.toLowerCase() == 'cycles' || PlayState.SONG.song.toLowerCase() == 'milk' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'chaos' || PlayState.SONG.song.toLowerCase() == 'too fest')
+			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'old endless' || PlayState.SONG.song.toLowerCase() == 'cycles' || PlayState.SONG.song.toLowerCase() == 'milk' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'chaos' || PlayState.SONG.song.toLowerCase() == 'too fest' || PlayState.SONG.song.toLowerCase() == 'you cant run' || PlayState.SONG.song.toLowerCase() == 'triple trouble')
 			{
 				FlxG.sound.playMusic(Paths.music('gameOverEnd-Exe'));
 			}
@@ -490,7 +498,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));
 			}
-			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'old endless' || PlayState.SONG.song.toLowerCase() == 'cycles' || PlayState.SONG.song.toLowerCase() == 'milk' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'chaos' || PlayState.SONG.song.toLowerCase() == 'too fest')
+			if (PlayState.SONG.song.toLowerCase() == 'too slow' || PlayState.SONG.song.toLowerCase() == 'endless' || PlayState.SONG.song.toLowerCase() == 'old endless' || PlayState.SONG.song.toLowerCase() == 'cycles' || PlayState.SONG.song.toLowerCase() == 'milk' || PlayState.SONG.song.toLowerCase() == 'sunshine' || PlayState.SONG.song.toLowerCase() == 'execution' || PlayState.SONG.song.toLowerCase() == 'chaos' || PlayState.SONG.song.toLowerCase() == 'too fest' || PlayState.SONG.song.toLowerCase() == 'you cant run' || PlayState.SONG.song.toLowerCase() == 'triple trouble')
 			{
 				new FlxTimer().start(0.1, function(tmr:FlxTimer)
 					{

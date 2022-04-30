@@ -9,3 +9,5 @@ gf-tea
 gf-rocks
 gf-troll
 gf-tf2
+gf-pixel-alt
+gf-v

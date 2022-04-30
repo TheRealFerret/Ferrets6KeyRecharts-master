@@ -153,6 +153,7 @@ class ChartingState extends MusicBeatState
 				noteStyle: 'normal',
 				stage: 'stage',
 				speed: 1,
+				isRing:false,
 				mania: 0,
 				validScore: false
 			};
@@ -222,7 +223,16 @@ class ChartingState extends MusicBeatState
 			trace('CHECKED!');
 		};
 
-		
+		var ringCheck = new FlxUICheckBox(10, 45, null, null, "ringMechanic", 100);
+		ringCheck.checked = (_song.isRing == true);
+		ringCheck.callback = function()
+		{
+			_song.isRing = false;
+			if (ringCheck.checked)
+			{
+				_song.isRing = true;		
+			}
+		};
 
 		var check_mute_inst = new FlxUICheckBox(10, 200, null, null, "Mute Instrumental (in editor)", 100);
 		check_mute_inst.checked = false;
@@ -234,6 +244,20 @@ class ChartingState extends MusicBeatState
 				vol = 0;
 
 			FlxG.sound.music.volume = vol;
+		};
+
+		var check_mute_vocals = new FlxUICheckBox(check_mute_inst.x + 120, check_mute_inst.y, null, null, "Mute Vocals (in editor)", 100);
+		check_mute_vocals.checked = false;
+		check_mute_vocals.callback = function()
+		{
+			if(vocals != null) {
+				var vol:Float = 1;
+
+				if (check_mute_vocals.checked)
+					vol = 0;
+
+				vocals.volume = vol;
+			}
 		};
 
 		var saveButton:FlxButton = new FlxButton(110, 8, "Save", function()
@@ -375,7 +399,10 @@ class ChartingState extends MusicBeatState
 
 		tab_group_song.add(check_voices);
 
+		tab_group_song.add(ringCheck);
+		
 		tab_group_song.add(check_mute_inst);
+		tab_group_song.add(check_mute_vocals);
 		tab_group_song.add(saveButton);
 		tab_group_song.add(reloadSong);
 		tab_group_song.add(reloadSongJson);
@@ -507,8 +534,13 @@ class ChartingState extends MusicBeatState
 	var stepperDad1Note:FlxUINumericStepper;
 	var stepperSnoiperNote:FlxUINumericStepper;
 	var stepperEbolaNote:FlxUINumericStepper;
+	var stepperPhantomNote:FlxUINumericStepper;
+	var stepperSageNote:FlxUINumericStepper;
+	var stepperNoAnimationNote:FlxUINumericStepper;
+	var stepperDisguiseNote:FlxUINumericStepper;
+	var stepperDrunkNote:FlxUINumericStepper;
 
-	var noteTypes:Array<String> = ['Normal', 'Fire', 'Death', 'Warning', 'Angel', 'Alt Anim', 'Bob', 'Glitch', 'Exe', 'Bsod', 'Markov', 'Katana', 'Mouse', 'Dad2', 'Dad1', 'Snoiper', 'Ebola'];
+	var noteTypes:Array<String> = ['Normal', 'Fire', 'Death', 'Warning', 'Angel', 'Alt Anim', 'Bob', 'Glitch', 'Exe', 'Bsod', 'Markov', 'Katana', 'Mouse', 'Dad2', 'Dad1', 'Snoiper', 'Ebola', 'Phantom', 'Exe Alt', 'Sage', 'No Anim', 'Disguise', 'Drunk'];
 	var typeChangeLabel:FlxText;
 
 	function addNoteUI():Void

@@ -23,7 +23,7 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to Freeplay'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to Freeplay', 'Exit to Options', 'Exit to Menu'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -158,7 +158,7 @@ class PauseSubState extends MusicBeatSubstate
 				{
 					grpMenuShit.clear();
 
-					menuItems = ['Restart Song', 'Exit to Freeplay'];
+					menuItems = ['Restart Song', 'Exit to Freeplay', 'Exit to Options', 'Exit to Menu'];
 
 					for (i in 0...menuItems.length)
 					{
@@ -183,7 +183,7 @@ class PauseSubState extends MusicBeatSubstate
 				{
 					grpMenuShit.clear();
 
-					menuItems = ['Restart Song', 'Exit to Freeplay'];
+					menuItems = ['Restart Song', 'Exit to Freeplay', 'Exit to Options', 'Exit to Menu'];
 
 					for (i in 0...menuItems.length)
 					{
@@ -242,6 +242,56 @@ class PauseSubState extends MusicBeatSubstate
 						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
 					
 					FlxG.switchState(new FreeplayState());
+				case "Exit to Options":
+					if (PlayState.instance.useVideo)
+					{
+						GlobalVideo.get().stop();
+						PlayState.instance.remove(PlayState.instance.videoSprite);
+						PlayState.instance.removedVideo = true;
+					}
+					if(PlayState.loadRep)
+					{
+						FlxG.save.data.SpectatorMode = false;
+						FlxG.save.data.scrollSpeed = 1;
+						FlxG.save.data.downscroll = false;
+					}
+					PlayState.loadRep = false;
+					#if windows
+					if (PlayState.luaModchart != null)
+					{
+						PlayState.luaModchart.die();
+						PlayState.luaModchart = null;
+					}
+					#end
+					if (FlxG.save.data.fpsCap > 290)
+						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
+					
+					FlxG.switchState(new OptionsMenu());
+				case "Exit to Menu":
+					if (PlayState.instance.useVideo)
+					{
+						GlobalVideo.get().stop();
+						PlayState.instance.remove(PlayState.instance.videoSprite);
+						PlayState.instance.removedVideo = true;
+					}
+					if(PlayState.loadRep)
+					{
+						FlxG.save.data.SpectatorMode = false;
+						FlxG.save.data.scrollSpeed = 1;
+						FlxG.save.data.downscroll = false;
+					}
+					PlayState.loadRep = false;
+					#if windows
+					if (PlayState.luaModchart != null)
+					{
+						PlayState.luaModchart.die();
+						PlayState.luaModchart = null;
+					}
+					#end
+					if (FlxG.save.data.fpsCap > 290)
+						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
+					
+					FlxG.switchState(new MainMenuState());
 			}
 		}
 

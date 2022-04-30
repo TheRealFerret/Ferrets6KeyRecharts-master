@@ -16,6 +16,11 @@ class HealthIcon extends FlxSprite
 		super();
 		switch(char)
 		{
+		case 'v-rage':
+			loadGraphic(Paths.image('icon-v-rage'), true, 150, 150);
+
+			antialiasing = true;
+			animation.add('v-rage', [0, 1], 0, false, isPlayer);
 		case 'bf-sonic-chaos':
 			loadGraphic(Paths.image('sonic icons'), true, 150, 150);
 	
@@ -31,11 +36,12 @@ class HealthIcon extends FlxSprite
 	
 			antialiasing = true;
 			animation.add('cancer', [0, 1], 0, false, isPlayer);
-		case 'bf-alt':
+		case 'bf-alt'|'bf-v':
 			loadGraphic(Paths.image('icon-bf-v'), true, 150, 150);
 	
 			antialiasing = true;
 			animation.add('bf-alt', [0, 1], 0, false, isPlayer);
+			animation.add('bf-v', [0, 1], 0, false, isPlayer);
 		case 'sonic-forced':
 			loadGraphic(Paths.image('sonic-forced'), true, 150, 150);
 	
@@ -89,13 +95,15 @@ class HealthIcon extends FlxSprite
 
 			antialiasing = true;
 			animation.add('herobrine', [0, 1], 0, false, isPlayer);
-		case 'soldierai'|'heavy-box'|'snoiper':
+		case 'soldierai'|'heavy-box'|'snoiper'|'spy'|'demoknight':
 			loadGraphic(Paths.image('iconGridtf2'), true, 150, 150);
 
 			antialiasing = true;
 			animation.add('soldierai', [52, 53], 0, false, isPlayer);
 			animation.add('heavy-box', [50, 51], 0, false, isPlayer);
 			animation.add('snoiper', [42, 43], 0, false, isPlayer);
+			animation.add('spy', [28, 29], 0, false, isPlayer);
+			animation.add('demoknight', [54, 55], 0, false, isPlayer);
 		case 'hellron':
 			loadGraphic(Paths.image('iconGridinacoolway'), true, 150, 150);
 
@@ -128,7 +136,7 @@ class HealthIcon extends FlxSprite
 
 			antialiasing = false;
 			animation.add('bf-loggochristmas', [0, 1], 0, false, isPlayer);	
-		case 'sonic' | 'sonicfun' | 'sonicLordX' | 'sunky' | 'bf-SS' | 'TDoll' | 'fleetway' | 'sanic':
+		case 'sonic'|'sonicfun'|'sonicLordX'|'sunky'|'bf-SS'|'TDoll'|'fleetway'|'sanic'|'sonic.exe'|'sonic.exe alt'|'bf-pixel-alt'|'beast'|'beast-cam-fix'|'tails'|'knucks'|'eggdickface':
 			loadGraphic(Paths.image('iconGridExe'), true, 150, 150);
 
 			antialiasing = true;
@@ -140,6 +148,14 @@ class HealthIcon extends FlxSprite
 			animation.add('TDoll', [33], 0, false, isPlayer);
 			animation.add('fleetway', [40, 41], 0, false, isPlayer);
 			animation.add('sanic', [38, 39], 0, false, isPlayer);
+			animation.add('sonic.exe', [46, 47], 0, false, isPlayer);
+			animation.add('sonic.exe alt', [42, 43], 0, false, isPlayer);
+			animation.add('bf-pixel-alt', [44, 45], 0, false, isPlayer);
+			animation.add('beast', [54, 55], 0, false, isPlayer);
+			animation.add('beast-cam-fix', [54, 55], 0, false, isPlayer);
+			animation.add('tails', [48, 49], 0, false, isPlayer);
+			animation.add('knucks', [50, 51], 0, false, isPlayer);
+			animation.add('eggdickface', [52, 53], 0, false, isPlayer);
 		case 'selever_angry':
 			loadGraphic(Paths.image('icon-Selever_Angry'), true, 150, 150);
 
@@ -235,6 +251,7 @@ class HealthIcon extends FlxSprite
 			animation.add('bf-blue', [0, 1], 0, false, isPlayer);
 			animation.add('bf-super', [0, 1], 0, false, isPlayer);
 			animation.add('bf-tf2', [0, 1], 0, false, isPlayer);
+			animation.add('bf-flipped-for-cam', [0, 1], 0, false, isPlayer);
 			animation.add('spooky', [2, 3], 0, false, isPlayer);
 			animation.add('pico', [4, 5], 0, false, isPlayer);
 			animation.add('mom', [6, 7], 0, false, isPlayer);
